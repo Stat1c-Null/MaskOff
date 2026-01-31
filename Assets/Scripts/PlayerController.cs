@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] protected float health;
     public bool canGetHit = true;
-    private float damageCD = 2f;
+    private float damageCD = 1.5f;
 
     [SerializeField] private GameController gameController;
 
@@ -307,9 +307,16 @@ public class PlayerController : MonoBehaviour
     {
         health -= 10;
         Debug.Log(health);
+        anim.Play("PigFall");
+        PI.actions.Disable();
+        Invoke("EnableActions", 0.5f);
         canGetHit = false;
         yield return new WaitForSeconds(damageCD);
         canGetHit = true;
+        
+            
+
+        
     }
 
     public void Hit()
