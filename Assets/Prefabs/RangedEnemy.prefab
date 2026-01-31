@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1664415051282915830}
   - component: {fileID: 4337241863017777400}
   - component: {fileID: 8710569705164120452}
+  - component: {fileID: 553618238270560641}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -115,7 +116,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 5704938559048430634, guid: 47e9e8cd402cffa4790683b9a049daad, type: 3}
   m_Color: {r: 1, g: 0.72657585, b: 0.17924517, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,6 +149,7 @@ MonoBehaviour:
   player: {fileID: 0}
   turnSpeed: 50
   left: {x: 0, y: 0, z: 0}
+  anim: {fileID: 0}
   spawn: {fileID: 8774638551454536696}
   projectile: {fileID: 1251751203512279938, guid: f506bf0e4c85c7e46927edecd5f4fde2, type: 3}
   projSpeed: 6
@@ -178,3 +180,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &553618238270560641
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8065676831829589769}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6058d029541e09447a229ca0c25e30da, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

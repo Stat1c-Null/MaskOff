@@ -6,7 +6,7 @@ public class RangedEnemy : Enemy
     public float turnSpeed; // speed at which enemy turns towards player (deg/sec)
 
     public Vector3 left; // direction that the enemy aims (set on line 42)
-
+    public Animator anim;
     public Transform spawn; //spawn location for projectiles
     public GameObject projectile; //thrown item
     public float projSpeed;
@@ -16,6 +16,12 @@ public class RangedEnemy : Enemy
     private float cooldown = .75f;
     Vector2 dist;
 
+    void Start()
+    {
+        tf = GetComponent<Transform>();
+        player = GameObject.Find("Player");
+        anim = GetComponent<Animator>();
+    }
     void Update()
     {
         dist = player.transform.position - tf.position; //vector between player and enemy
@@ -30,6 +36,8 @@ public class RangedEnemy : Enemy
         //Switch behaviour based on currentState
         if (currentState == State.Wandering)
         {
+            anim.Play("RangedIdle");
+
             if (!choosingDirection)
             {
                 choosingDirection = true;
@@ -38,6 +46,7 @@ public class RangedEnemy : Enemy
         }
         else if (currentState == State.Attacking)
         {
+            anim.Play("RangedAttack");
             RangeAttack();
         }
 
