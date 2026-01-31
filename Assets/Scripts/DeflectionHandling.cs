@@ -2,24 +2,43 @@ using UnityEngine;
 
 public class DeflectionHandling : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
+    private PlayerController playerController;
 
-    
-    void OnCollisionStay2D(Collision2D collision)
+    void Start()
     {
-        // Called every frame while collider is touching
-        if(collision.gameObject.CompareTag("Enemy"))
+        playerController = GetComponentInParent<PlayerController>();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Still touching enemy");
+            Debug.Log("Attack hit enemy!");
         }
 
-        /*if(collision.gameObject.CompareTag("Projectile"))
+        if(collision.gameObject.CompareTag("Projectile")) 
         {
-            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-            Vector2 incident = rb.linearVelocity;
-            rb.AddForce(-1f*incident);
-        }*/
-
+            //Deflect projectile in opposite direction
+            Debug.Log("Projectile collision detected!");
+            //Destroy(collision.gameObject);
+            /*Rigidbody2D projectileRb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (projectileRb != null)
+            {
+                projectileRb.linearVelocity = -projectileRb.linearVelocity;
+                Debug.Log("Projectile deflected!");
+            }*/
+        }
     }
+
+    /*void OnCollisionStay2D(Collision2D collision)
+    {
+        // Called every frame while collider is touching
+        if (playerController != null && playerController.isAttackActive)
+        {
+            if(collision.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log("Still touching enemy during attack");
+            }
+        }
+    }*/
 }

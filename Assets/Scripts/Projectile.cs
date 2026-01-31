@@ -4,13 +4,13 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] protected GameObject player;
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if(col.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player"))
         {
-            if(col.gameObject.GetComponent<PlayerController>().canGetHit == true)
+            if(collision.gameObject.GetComponent<PlayerController>().canGetHit == true)
             {
-                col.gameObject.GetComponent<PlayerController>().Hit();
+                collision.gameObject.GetComponent<PlayerController>().Hit();
                 Debug.Log("Player hit by projectile!");
             }      
             Destroy(gameObject);

@@ -13,7 +13,7 @@ public class RangedEnemy : Enemy
 
     //used to control fire rate
     private float timer = 0f; 
-    private float cooldown = .75f;
+    [SerializeField] private float cooldown = .75f;
     Vector2 dist;
 
     void Update()
