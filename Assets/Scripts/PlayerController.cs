@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     public bool canGetHit = true;
     private float damageCD = 2f;
 
+    [SerializeField] private GameController gameController;
 
     void Start()
     {
@@ -68,7 +69,13 @@ public class PlayerController : MonoBehaviour
         move = InputSystem.actions.FindAction("Move");
         dashAction = InputSystem.actions.FindAction("Sprint");
     }
-    void Update() {
+
+    void Update()
+    {
+        if(health <= 0)
+        {
+            gameController.GameOver();
+        }
         anim.SetBool("RAttack", false); //set bool to false to allow attacks once animation is over
         rb.linearVelocity = moveInput * speed;
         if (rb.linearVelocity.x == 0 && rb.linearVelocity.y == 0)
