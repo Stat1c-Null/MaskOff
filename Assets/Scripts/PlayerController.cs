@@ -41,9 +41,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] protected float health;
     public bool canGetHit = true;
-    private float damageCD = 1.5f;
+    private float damageCD = 2f;
 
-    [SerializeField] private GameController gameController;
 
     void Start()
     {
@@ -69,13 +68,8 @@ public class PlayerController : MonoBehaviour
         move = InputSystem.actions.FindAction("Move");
         dashAction = InputSystem.actions.FindAction("Sprint");
     }
-
     void Update()
     {
-        if(health <= 0)
-        {
-            gameController.GameOver();
-        }
         anim.SetBool("RAttack", false); //set bool to false to allow attacks once animation is over
         rb.linearVelocity = moveInput * speed;
         if (rb.linearVelocity.x == 0 && rb.linearVelocity.y == 0)
@@ -86,6 +80,7 @@ public class PlayerController : MonoBehaviour
         if (rageAction.IsPressed() && !inRage && canRage)
         {
             anim.Play("GoatTransform");
+            speed = 5f;
             PI.actions.Disable();
             Invoke("EnableActions", 1.5f);
             inRage = true;
@@ -97,6 +92,7 @@ public class PlayerController : MonoBehaviour
         if (rageAction.IsPressed() && inRage /*|| rageIsOver*/)
         {
             anim.Play("PigIdleRight");
+            speed = 1.2f;
             inRage = false;
             secondDash = false;
             StartCoroutine("RageCooldown");
@@ -171,8 +167,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (dashAction.IsPressed() && canDash && inRage)
         {
-            //gets two dashes
-            //anim.Play("GoatDash");
+
+            anim.Play("GoatDash");
             rb.MovePosition(rb.position + moveInput * 3.5f);
             if (secondDash)
             {
@@ -313,10 +309,10 @@ public class PlayerController : MonoBehaviour
         canGetHit = false;
         yield return new WaitForSeconds(damageCD);
         canGetHit = true;
-        
-            
 
-        
+
+
+
     }
 
     public void Hit()
@@ -324,3 +320,6 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(Damage());
     }
 }
+
+
+
