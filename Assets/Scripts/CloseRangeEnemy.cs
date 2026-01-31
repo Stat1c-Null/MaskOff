@@ -11,7 +11,7 @@ public class CloseRangeEnemy : Enemy
         distanceToPlayer = Vector3.Distance(tf.position, player.GetComponent<Transform>().position);
         if (distanceToPlayer < aggroRange && currentState != State.Attacking)
         {
-            Debug.Log("Player in range! Attacking!");
+            //Debug.Log("Player in range! Attacking!");
             currentState = State.Attacking;
         }
 
