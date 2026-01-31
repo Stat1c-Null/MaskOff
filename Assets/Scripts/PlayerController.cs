@@ -77,16 +77,22 @@ public class PlayerController : MonoBehaviour
 
         if (rageAction.IsPressed() && !inRage && canRage)
         {
+            inRage = true;
+            secondDash = true;
             anim.Play("GoatTransform");
+            anim.SetBool("Rage", true);
             speed = 5f;
             PI.actions.Disable();
             Invoke("EnableActions", 1.5f);
-            inRage = true;
-            secondDash = true;
+            
+
+
+
         }
         if (rageAction.IsPressed() && inRage /*|| rageIsOver*/)
         {
-            anim.Play("PigIdleRight");
+            anim.Play("PigHurt");
+            anim.SetBool("Rage", false);
             speed = 1.2f;
             inRage = false;
             secondDash = false;
@@ -136,9 +142,10 @@ public class PlayerController : MonoBehaviour
             anim.Play("PigSwingRight");
         }
 
-        if (attackAction.IsPressed() && !inRage)
+        if (attackAction.IsPressed() && inRage)
         {
-            //anim.Play("GoatSwing");
+            anim.Play("GoatSwing");
+
         }
 
         if (dashAction.IsPressed() && canDash && !inRage)
@@ -267,7 +274,15 @@ public class PlayerController : MonoBehaviour
     IEnumerator Damage()
     {
         health -= 10;
-        anim.Play("PigFall");
+        Debug.Log(health);
+        if (!inRage)
+        {
+            anim.Play("PigHurt");
+        }
+        else
+        {
+            anim.Play("GoatHurt");
+        }
         PI.actions.Disable();
         Invoke("EnableActions", 0.5f);
         canGetHit = false;
