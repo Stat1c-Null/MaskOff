@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
     {
         if (player != null && player.GetComponent<PlayerController>().GetHealth() <= 0)
         {
-            GameOver();
+            Invoke("GameOver", 1.0f);
         }
     }
 }
