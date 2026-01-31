@@ -77,5 +77,6 @@ public class RangedEnemy : Enemy
         GameObject proj = Instantiate(projectile, spawn.position, spawn.rotation);
         proj.transform.Rotate(0f, 0f, 90f);
         proj.GetComponent<Rigidbody2D>().linearVelocity = left * projSpeed;
+        Destroy(proj, 5f);
     }
 }

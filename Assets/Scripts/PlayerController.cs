@@ -24,7 +24,9 @@ public class PlayerController : MonoBehaviour
 
     bool inRage = false;
 
-    
+    [SerializeField] protected float health;
+    public bool canGetHit = true;
+    private float damageCD = 2f;
 
 
     void Start()
@@ -171,8 +173,18 @@ public class PlayerController : MonoBehaviour
         canRage = true;
     }
 
+    IEnumerator Damage()
+    {
+        health -= 10;
+        Debug.Log(health);
+        canGetHit = false;
+        yield return new WaitForSeconds(damageCD);
+        canGetHit = true;
+    }
 
-
-
+    public void Hit()
+    {
+        StartCoroutine(Damage());
+    }
 
 }
