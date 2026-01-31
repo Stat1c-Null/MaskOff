@@ -4,24 +4,13 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject PigAttack;
-    public GameObject PigDash;
-    public GameObject PigBlock;
-    
-    BoxCollider2D PAHB;
-    BoxCollider2D PDHB;
-    BoxCollider2D PBHB;
-
-    BoxCollider2D GAHB; //goat attack hit box
-    BoxCollider2D GDHB; // goat dash hit box
-    BoxCollider2D GGHB;//goat grab hit box
-
+    public GameObject Attack;
+    BoxCollider2D AttackHB;
     Transform tf;
     Rigidbody2D rb;
     private Vector2 moveInput;
     public float speed = 1.2f;
     private Animator anim;
-    InputAction secondAction;
     InputAction attackAction;
     InputAction rageAction;
     InputAction dashAction;
@@ -32,34 +21,22 @@ public class PlayerController : MonoBehaviour
     bool canRage = true; //WILL BE CHANGED LATER
     bool secondDash = false;
 
-    bool canBlock = true;
-    bool successfulBlock = true;
-
 
     bool inRage = false;
 
-    //TO WHOMEVER IS DEALING WITH DAMAGE, you can put the player into the fall animation by using anim.SetBool("isHurt",true);
+    [SerializeField] protected float health;
+    public bool canGetHit = true;
+    private float damageCD = 2f;
 
 
     void Start()
     {
         //getting components, you know how it be.
         PI = GetComponent<PlayerInput>();
-
-        PAHB = PigAttack.GetComponent<BoxCollider2D>(); //pig attack hit box
-        PDHB = PigDash.GetComponent<BoxCollider2D>(); // ''  dash '' ''
-        PBHB = PigBlock.GetComponent<BoxCollider2D>(); // '' block '' ''
-
-        GAHB = GameObject.Find("GoatAttack").GetComponent<BoxCollider2D>(); //goat attack hit box
-        GDHB = GameObject.Find("GoatDash").GetComponent<BoxCollider2D>(); // ''  dash '' ''
-        GGHB = GameObject.Find("GoatGrab").GetComponent<BoxCollider2D>(); // '' grab '' ''
-
-
-
+        AttackHB = Attack.GetComponent<BoxCollider2D>();
         tf = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        secondAction =InputSystem.actions.FindAction("Second");
         attackAction = InputSystem.actions.FindAction("Attack");
         rageAction = InputSystem.actions.FindAction("RAGE");
         move = InputSystem.actions.FindAction("Move");
@@ -95,53 +72,6 @@ public class PlayerController : MonoBehaviour
             StartCoroutine("RageCooldown");
         }
 
-        if (secondAction.IsPressed() && !inRage && canBlock) //block for pig
-        {   canBlock = false;
-            successfulBlock = false;
-            
-            anim.Play("PigBlock");
-            while (anim.GetCurrentAnimatorStateInfo(0).IsName("PigBlock"))
-                {
-                    if (successfulBlock)
-                    {
-                        //CODE HERE WILL VALIDATE HIT AND IF TRUE
-
-
-
-                        PBHB.enabled = true;
-                        anim.Play("GoodBlock");
-                        EnableActions();
-
-                        //AND can
-                        //++BIG RAGE INCREASE++
-
-                    }
-                    
-
-
-
-                }
-            
-            
-            PBHB.enabled = false;
-            successfulBlock = true;
-            StartCoroutine(BadBlockCooldown());
-
-            
-            PI.actions.Disable();
-            Invoke("EnableActions", 0.5f);
-            
-
-        }
-
-        if (secondAction.IsPressed() && inRage) //grab for goat guy
-        {
-            //anim.Play("GoatGrab");
-            
-
-
-        }
-
 
         if (attackAction.IsPressed() && !inRage)
         {
@@ -151,13 +81,13 @@ public class PlayerController : MonoBehaviour
 
         if (attackAction.IsPressed() && !inRage)
         {
-            //anim.Play("GoatSwing");
+            //anim.Play("GoatSwing1");
 
         }
 
         if (dashAction.IsPressed() && canDash  && !inRage)
         {
-            anim.Play("PigDash");
+            //anim.Play("PigDash");
             rb.MovePosition(rb.position + moveInput * 3.5f);
             StartCoroutine(DashCooldown());
         }
@@ -178,60 +108,17 @@ public class PlayerController : MonoBehaviour
         }
 
 
-
-        //Series of if statements that toggle on and off hit boxes for their respective moves depending on if the animation is playing
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("PigSwingRight"))
         {
-            PAHB.enabled = true;
+            AttackHB.enabled = true;
 
         }
         else
         {
-            PAHB.enabled = false;
-        }
-
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("PigDash"))
-        {
-            PDHB.enabled = true;
-
-        }
-        else
-        {
-            PDHB.enabled = false;
+            AttackHB.enabled = false;
         }
 
         
-           
-
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("GoatSwing"))
-        {
-            GAHB.enabled = true;
-
-        }
-        else
-        {
-            GAHB.enabled = false;
-        }
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("GoatDash"))
-        {
-            GAHB.enabled = true;
-
-        }
-        else
-        {
-            GAHB.enabled = false;
-        }
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("GoatGrab"))
-        {
-            GAHB.enabled = true;
-
-        }
-        else
-        {
-            GAHB.enabled = false;
-        }
-
-
 
     }
 
@@ -286,15 +173,18 @@ public class PlayerController : MonoBehaviour
         canRage = true;
     }
 
-    IEnumerator BadBlockCooldown()
+    IEnumerator Damage()
     {
-        canBlock = false;
-        yield return new WaitForSeconds(4f); // WILL BE MUCH LONGER
-        canBlock = true;
+        health -= 10;
+        Debug.Log(health);
+        canGetHit = false;
+        yield return new WaitForSeconds(damageCD);
+        canGetHit = true;
     }
 
-
-
-
+    public void Hit()
+    {
+        StartCoroutine(Damage());
+    }
 
 }
