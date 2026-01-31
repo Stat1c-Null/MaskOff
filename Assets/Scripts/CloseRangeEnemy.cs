@@ -1,9 +1,12 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class CloseRangeEnemy : Enemy
 {
 
     public GameObject player;
+    bool choosingDirection = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,19 +23,24 @@ public class CloseRangeEnemy : Enemy
         float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
         if (distanceToPlayer < aggroRange)
         {
-            Debug.Log("Player in range! Attacking!");
+            //Debug.Log("Player in range! Attacking!");
             currentState = State.Attacking;
         }
         else
         {
-            Debug.Log("Player out of range. Wandering.");
+            //Debug.Log("Player out of range. Wandering.");
             currentState = State.Wandering;
         }
 
         //Switch behaviour based on currentState
         if (currentState == State.Wandering)
         {
-            Wander();
+            if (!choosingDirection)
+            {
+                choosingDirection = true;
+                StartCoroutine(Wander());
+                choosingDirection = false;
+            }
         }
         else if (currentState == State.Attacking)
         {
@@ -40,9 +48,21 @@ public class CloseRangeEnemy : Enemy
         }
     }
 
-    void Wander()
+    IEnumerator Wander()
     {
-        // Implementation for wandering behavior
+        // Choose a random direction to move in
+        /*Vector3 randomDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
+        // Move in that direction for a short duration
+        float wanderDuration = Random.Range(5f, 10f);
+        float elapsed = 0f;
+        while (elapsed < wanderDuration)
+        {
+            transform.Translate(randomDirection * speed * Time.deltaTime, Space.World);
+            elapsed += Time.deltaTime;   
+        }*/
+        Debug.Log("Waiting");
+        yield return new WaitForSecondsRealtime(5f);
+        Debug.Log("Done Waiting");
     }
 
     void MeleeAttack()
