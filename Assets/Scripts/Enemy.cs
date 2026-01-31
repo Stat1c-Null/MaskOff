@@ -26,6 +26,20 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float attackDistance;
     protected bool choosingDirection = false;
     [SerializeField] protected float wanderWait = 2f;
+    [SerializeField] protected GameObject player;
+    protected Transform tf;
+    protected float distanceToPlayer;
+
+    void Start()
+    {
+        tf = GetComponent<Transform>();
+        currentState = State.Wandering;
+        player = GameObject.FindWithTag("Player");
+        if (player == null)
+        {
+            Debug.LogError("Player object not found in the scene. Please ensure there is a GameObject with the tag 'Player'.");
+        }
+    }
 
     protected IEnumerator Wander()
     {

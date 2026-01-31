@@ -4,20 +4,6 @@ using System.Collections.Generic;
 
 public class CloseRangeEnemy : Enemy
 {
-
-    public GameObject player;
-    float distanceToPlayer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        currentState = State.Wandering;
-        player = GameObject.FindWithTag("Player");
-        if (player == null)
-        {
-            Debug.LogError("Player object not found in the scene. Please ensure there is a GameObject with the tag 'Player'.");
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
