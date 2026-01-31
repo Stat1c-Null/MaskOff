@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2983659037181947120}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4c8c21023c3686d46abe48a97f8c916d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
