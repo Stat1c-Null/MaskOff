@@ -32,7 +32,12 @@ public class CloseRangeEnemy : Enemy
 
     void MeleeAttack()
     {
-        Debug.Log("Attacking the player with a melee attack!");
+        if (player.GetComponent<PlayerController>().canGetHit == true)
+        {
+            Debug.Log("Attacking the player with a melee attack!");
+            player.GetComponent<PlayerController>().Hit();
+        }
+        
     }
 
     void MoveTowards(Vector3 targetPosition)
