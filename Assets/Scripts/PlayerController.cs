@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     bool inRage = false;
     //TO WHOMEVER IS DEALING WITH DAMAGE, you can put the player into the fall animation by using anim.SetBool("isHurt",true);
 
-    [SerializeField] protected float health;
+    [SerializeField] protected float health = 100f;
     public bool canGetHit = true;
     private float damageCD = 2f;
 
@@ -318,6 +318,11 @@ public class PlayerController : MonoBehaviour
     public void Hit()
     {
         StartCoroutine(Damage());
+    }
+
+    public float GetHealth()
+    {
+        return health;
     }
 }
 
