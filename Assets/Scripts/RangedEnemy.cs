@@ -23,7 +23,7 @@ public class RangedEnemy : Enemy
 
         if (inRange && currentState != State.Attacking)
         {
-            Debug.Log("Player in range! Distance Attacking!");
+            //Debug.Log("Player in range! Distance Attacking!");
             currentState = State.Attacking;
         }
 

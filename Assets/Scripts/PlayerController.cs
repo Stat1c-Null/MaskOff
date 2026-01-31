@@ -57,8 +57,6 @@ public class PlayerController : MonoBehaviour
         GDHB = GameObject.Find("GoatDash").GetComponent<BoxCollider2D>(); // ''  dash '' ''
         GGHB = GameObject.Find("GoatGrab").GetComponent<BoxCollider2D>(); // '' grab '' ''
 
-
-
         tf = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -85,9 +83,6 @@ public class PlayerController : MonoBehaviour
             Invoke("EnableActions", 1.5f);
             inRage = true;
             secondDash = true;
-
-
-
         }
         if (rageAction.IsPressed() && inRage /*|| rageIsOver*/)
         {
@@ -120,43 +115,30 @@ public class PlayerController : MonoBehaviour
                     //++BIG RAGE INCREASE++
 
                 }
-
-
-
-
             }
-
 
             PBHB.enabled = false;
             successfulBlock = true;
             StartCoroutine(BadBlockCooldown());
 
-
             PI.actions.Disable();
             Invoke("EnableActions", 0.5f);
-
-
         }
 
         if (secondAction.IsPressed() && inRage) //grab for goat guy
         {
             //anim.Play("GoatGrab");
 
-
-
         }
-
 
         if (attackAction.IsPressed() && !inRage)
         {
             anim.Play("PigSwingRight");
-
         }
 
         if (attackAction.IsPressed() && !inRage)
         {
             //anim.Play("GoatSwing");
-
         }
 
         if (dashAction.IsPressed() && canDash && !inRage)
@@ -167,7 +149,6 @@ public class PlayerController : MonoBehaviour
         }
         else if (dashAction.IsPressed() && canDash && inRage)
         {
-
             anim.Play("GoatDash");
             rb.MovePosition(rb.position + moveInput * 3.5f);
             if (secondDash)
@@ -176,12 +157,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(SecondDashBuffer());
             }
             else { StartCoroutine(DashCooldown()); }
-
-
-
         }
-
-
 
         //Series of if statements that toggle on and off hit boxes for their respective moves depending on if the animation is playing
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("PigSwingRight"))
@@ -203,9 +179,6 @@ public class PlayerController : MonoBehaviour
         {
             PDHB.enabled = false;
         }
-
-
-
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("GoatSwing"))
         {
@@ -234,9 +207,6 @@ public class PlayerController : MonoBehaviour
         {
             GAHB.enabled = false;
         }
-
-
-
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -252,7 +222,6 @@ public class PlayerController : MonoBehaviour
             facingRight = true;
             tf.transform.localScale = new Vector3(1f, 1f, 1f);
         }
-
         anim.SetBool("isWalking", true);
     }
 
@@ -279,8 +248,6 @@ public class PlayerController : MonoBehaviour
         canDash = false;
         yield return new WaitForSeconds(0.15f); //cooldown duration
         canDash = true;
-
-
     }
 
     IEnumerator RageCooldown()
@@ -297,22 +264,15 @@ public class PlayerController : MonoBehaviour
         canBlock = true;
     }
 
-
-
     IEnumerator Damage()
     {
         health -= 10;
-        Debug.Log(health);
         anim.Play("PigFall");
         PI.actions.Disable();
         Invoke("EnableActions", 0.5f);
         canGetHit = false;
         yield return new WaitForSeconds(damageCD);
         canGetHit = true;
-
-
-
-
     }
 
     public void Hit()
