@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: b2413710e3babff48883aaf16654cc64
+guid: bd6f2c68a3efd4b4796d410a3292439c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4689240166119133576
-    second: pixilart-sprite_0
+      213: -8581759396206521096
+    second: MeleeAttack_0
   - first:
-      213: 4521018998857404175
-    second: pixilart-sprite_1
+      213: -7178623259649137448
+    second: MeleeAttack_1
   - first:
-      213: -4621546931983276131
-    second: pixilart-sprite_2
+      213: -4205368095397869056
+    second: MeleeAttack_2
   - first:
-      213: 713319685308842295
-    second: pixilart-sprite_3
+      213: 4094403805000562864
+    second: MeleeAttack_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -81,7 +81,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -109,12 +109,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PigWalking_0
+      name: MeleeAttack_0
       rect:
         serializedVersion: 2
-        x: 83
-        y: 20
-        width: 366
+        x: 216
+        y: 48
+        width: 219
         height: 618
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -122,21 +122,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b2c0fa07925690746a59c85ae2d4fe93
-      internalID: 317230438
+      spriteID: 8f45d391c4777e880800000000000000
+      internalID: -8581759396206521096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PigWalking_1
+      name: MeleeAttack_2
       rect:
         serializedVersion: 2
-        x: 783
-        y: 13
-        width: 366
+        x: 1441
+        y: 48
+        width: 408
         height: 618
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -144,54 +144,32 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3a489a461fd4ee349a9a1c5fbb0a4823
-      internalID: 1840006160
+      spriteID: 00a8c0c8ff783a5c0800000000000000
+      internalID: -4205368095397869056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PigWalking_2
+      name: MeleeAttack_3
       rect:
         serializedVersion: 2
-        x: 1476
-        y: 13
-        width: 366
-        height: 618
+        x: 958
+        y: 48
+        width: 219
+        height: 590
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 422964fc728aed048b92ec0f01381cce
-      internalID: 14197555
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PigWalking_3
-      rect:
-        serializedVersion: 2
-        x: 2183
-        y: 20
-        width: 366
-        height: 618
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ccfa32d96c4af8349a7615fcb05a3040
-      internalID: 1490216372
+      spriteID: 0b8f01c419e32d830800000000000000
+      internalID: 4094403805000562864
       vertices: []
       indices: 
       edges: []
@@ -200,7 +178,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5fdad2e84c3021849aed89a6fa2c7afe
+    spriteID: c32f03d3c24702548bbd3474cb4cf6ac
     internalID: 0
     vertices: []
     indices: 
@@ -208,14 +186,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      PigWalking_0: 317230438
-      PigWalking_1: 1840006160
-      PigWalking_2: 14197555
-      PigWalking_3: 1490216372
+      MeleeAttack_0: -8581759396206521096
+      MeleeAttack_1: -7178623259649137448
+      MeleeAttack_2: -4205368095397869056
+      MeleeAttack_3: 4094403805000562864
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

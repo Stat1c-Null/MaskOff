@@ -1,25 +1,31 @@
 fileFormatVersion: 2
-guid: 46a9e17fdd28f4248a199dbbb8be5411
+guid: 10c28644696370c45af29b54c64526d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2699721380527466488
-    second: pixilart-sprite (7)_0
+      213: 8208270978804853502
+    second: Melee_0
   - first:
-      213: -6317328553093526140
-    second: pixilart-sprite (7)_1
+      213: 6136327500665522839
+    second: Melee_1
   - first:
-      213: -4293931877964787223
-    second: pixilart-sprite (7)_2
+      213: 5970288980717055161
+    second: Melee_2
   - first:
-      213: -7534931932984655772
-    second: pixilart-sprite (7)_3
+      213: 5890377819349913679
+    second: Melee_3
   - first:
-      213: 9135284674282138978
-    second: pixilart-sprite (7)_4
+      213: 121273896049731177
+    second: Melee_4
   - first:
-      213: 800262850943670068
-    second: pixilart-sprite (7)_5
+      213: 3040354737816136184
+    second: Melee_5
+  - first:
+      213: -7054007283797778286
+    second: Melee_6
+  - first:
+      213: -8640008979126938862
+    second: Melee_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -87,7 +93,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -115,133 +121,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixilart-sprite (7)_0
+      name: Melee_0
       rect:
         serializedVersion: 2
-        x: 80
-        y: 59
-        width: 471
-        height: 576
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f7edd6ba46577520800000000000000
-      internalID: 2699721380527466488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pixilart-sprite (7)_1
-      rect:
-        serializedVersion: 2
-        x: 786
+        x: 230
         y: 41
-        width: 401
-        height: 576
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 205
+        height: 625
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48d8d6fc6275458a0800000000000000
-      internalID: -6317328553093526140
+      spriteID: efaafc747f2a9e170800000000000000
+      internalID: 8208270978804853502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixilart-sprite (7)_2
+      name: Melee_1
       rect:
         serializedVersion: 2
-        x: 1483
+        x: 930
+        y: 48
+        width: 205
+        height: 625
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79a01a6a95d982550800000000000000
+      internalID: 6136327500665522839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_2
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 55
+        width: 205
+        height: 625
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bca11e223abad250800000000000000
+      internalID: 5970288980717055161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_3
+      rect:
+        serializedVersion: 2
+        x: 2330
         y: 62
-        width: 485
+        width: 205
         height: 625
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e1de2c05b3e864c0800000000000000
-      internalID: -4293931877964787223
+      spriteID: f40113b0b63deb150800000000000000
+      internalID: 5890377819349913679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixilart-sprite (7)_3
+      name: Melee_4
       rect:
         serializedVersion: 2
-        x: 2183
+        x: 3030
+        y: 69
+        width: 205
+        height: 625
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 966629647f9dea100800000000000000
+      internalID: 121273896049731177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_5
+      rect:
+        serializedVersion: 2
+        x: 3730
+        y: 62
+        width: 205
+        height: 625
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9e4ba8682813a20800000000000000
+      internalID: 3040354737816136184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_6
+      rect:
+        serializedVersion: 2
+        x: 4430
         y: 55
-        width: 492
+        width: 205
         height: 625
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 460c3b7245b8e6790800000000000000
-      internalID: -7534931932984655772
+      spriteID: 2902736cfb12b1e90800000000000000
+      internalID: -7054007283797778286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixilart-sprite (7)_4
+      name: Melee_7
       rect:
         serializedVersion: 2
-        x: 2883
-        y: 55
-        width: 492
-        height: 625
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26d28aca20d07ce70800000000000000
-      internalID: 9135284674282138978
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pixilart-sprite (7)_5
-      rect:
-        serializedVersion: 2
-        x: 3583
+        x: 5130
         y: 41
-        width: 401
-        height: 576
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 205
+        height: 625
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 437507da2da1b1b00800000000000000
-      internalID: 800262850943670068
+      spriteID: 21314f63c95881880800000000000000
+      internalID: -8640008979126938862
       vertices: []
       indices: 
       edges: []
@@ -250,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0501050e985feb8439700a63ab0d60e9
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pixilart-sprite (7)_0: 2699721380527466488
-      pixilart-sprite (7)_1: -6317328553093526140
-      pixilart-sprite (7)_2: -4293931877964787223
-      pixilart-sprite (7)_3: -7534931932984655772
-      pixilart-sprite (7)_4: 9135284674282138978
-      pixilart-sprite (7)_5: 800262850943670068
+      Melee_0: 8208270978804853502
+      Melee_1: 6136327500665522839
+      Melee_2: 5970288980717055161
+      Melee_3: 5890377819349913679
+      Melee_4: 121273896049731177
+      Melee_5: 3040354737816136184
+      Melee_6: -7054007283797778286
+      Melee_7: -8640008979126938862
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

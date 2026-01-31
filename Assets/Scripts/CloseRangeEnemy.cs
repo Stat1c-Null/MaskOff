@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class CloseRangeEnemy : Enemy
-{
+{   
     // Update is called once per frame
     void Update()
     {
-        //Calculate distance to player
-        distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        //Calculate distance to player  
+        distanceToPlayer = Vector3.Distance(tf.position, player.GetComponent<Transform>().position);
         if (distanceToPlayer < aggroRange && currentState != State.Attacking)
         {
             //Debug.Log("Player in range! Attacking!");
@@ -18,6 +18,7 @@ public class CloseRangeEnemy : Enemy
         //Switch behaviour based on currentState
         if (currentState == State.Wandering)
         {
+            anim.Play("CloseIdle");
             if (!choosingDirection)
             {
                 choosingDirection = true;
@@ -26,6 +27,7 @@ public class CloseRangeEnemy : Enemy
         }
         else if (currentState == State.Attacking)
         {
+            anim.Play("CloseAttack");
             MoveTowards(player.transform.position);
         }
     }

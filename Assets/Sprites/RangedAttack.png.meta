@@ -1,25 +1,58 @@
 fileFormatVersion: 2
-guid: 46a9e17fdd28f4248a199dbbb8be5411
+guid: d0e6a18242987004a891422f5ed2a34d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2699721380527466488
-    second: pixilart-sprite (7)_0
+      213: 1292983933030286991
+    second: RangedAttack_0
   - first:
-      213: -6317328553093526140
-    second: pixilart-sprite (7)_1
+      213: -4804074815023235261
+    second: RangedAttack_1
   - first:
-      213: -4293931877964787223
-    second: pixilart-sprite (7)_2
+      213: -4543147093718545307
+    second: RangedAttack_2
   - first:
-      213: -7534931932984655772
-    second: pixilart-sprite (7)_3
+      213: -6381030032891834970
+    second: RangedAttack_3
   - first:
-      213: 9135284674282138978
-    second: pixilart-sprite (7)_4
+      213: -7489982310487186280
+    second: RangedAttack_4
   - first:
-      213: 800262850943670068
-    second: pixilart-sprite (7)_5
+      213: 5767755925949721892
+    second: RangedAttack_5
+  - first:
+      213: -8843466686022899706
+    second: RangedAttack_6
+  - first:
+      213: 7458471224880725436
+    second: RangedAttack_7
+  - first:
+      213: -6902586407460851814
+    second: RangedAttack_8
+  - first:
+      213: -872959308543794750
+    second: RangedAttack_9
+  - first:
+      213: 5453223713558060430
+    second: RangedAttack_10
+  - first:
+      213: 3906357980401835346
+    second: RangedAttack_11
+  - first:
+      213: 1841937239845147465
+    second: RangedAttack_12
+  - first:
+      213: -2621279625037040356
+    second: RangedAttack_13
+  - first:
+      213: 6256136382525159235
+    second: RangedAttack_14
+  - first:
+      213: -4813305651796135857
+    second: RangedAttack_15
+  - first:
+      213: 5147069688954190161
+    second: RangedAttack_16
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -87,7 +120,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -115,36 +148,14 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixilart-sprite (7)_0
+      name: RangedAttack_4
       rect:
         serializedVersion: 2
-        x: 80
-        y: 59
-        width: 471
-        height: 576
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f7edd6ba46577520800000000000000
-      internalID: 2699721380527466488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pixilart-sprite (7)_1
-      rect:
-        serializedVersion: 2
-        x: 786
+        x: 2960
         y: 41
-        width: 401
-        height: 576
-      alignment: 9
+        width: 303
+        height: 631
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -152,87 +163,21 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48d8d6fc6275458a0800000000000000
-      internalID: -6317328553093526140
+      spriteID: 894a371b5cc3e0890800000000000000
+      internalID: -7489982310487186280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixilart-sprite (7)_2
+      name: RangedAttack_6
       rect:
         serializedVersion: 2
-        x: 1483
-        y: 62
-        width: 485
-        height: 625
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e1de2c05b3e864c0800000000000000
-      internalID: -4293931877964787223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pixilart-sprite (7)_3
-      rect:
-        serializedVersion: 2
-        x: 2183
-        y: 55
-        width: 492
-        height: 625
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 460c3b7245b8e6790800000000000000
-      internalID: -7534931932984655772
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pixilart-sprite (7)_4
-      rect:
-        serializedVersion: 2
-        x: 2883
-        y: 55
-        width: 492
-        height: 625
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26d28aca20d07ce70800000000000000
-      internalID: 9135284674282138978
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pixilart-sprite (7)_5
-      rect:
-        serializedVersion: 2
-        x: 3583
+        x: 3709
         y: 41
-        width: 401
-        height: 576
-      alignment: 9
+        width: 254
+        height: 653
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -240,8 +185,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 437507da2da1b1b00800000000000000
-      internalID: 800262850943670068
+      spriteID: 608aa9c57e1b54580800000000000000
+      internalID: -8843466686022899706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedAttack_7
+      rect:
+        serializedVersion: 2
+        x: 4283
+        y: 41
+        width: 380
+        height: 638
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbdfc76ff00d18760800000000000000
+      internalID: 7458471224880725436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedAttack_10
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 41
+        width: 177
+        height: 644
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8d5d57331ebdab40800000000000000
+      internalID: 5453223713558060430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedAttack_11
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 78
+        width: 163
+        height: 571
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d1d5be2eb263630800000000000000
+      internalID: 3906357980401835346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedAttack_12
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 55
+        width: 170
+        height: 571
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 943988f1920ef8910800000000000000
+      internalID: 1841937239845147465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedAttack_13
+      rect:
+        serializedVersion: 2
+        x: 2344
+        y: 41
+        width: 219
+        height: 636
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c15b2b4b1185f9bd0800000000000000
+      internalID: -2621279625037040356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedAttack_15
+      rect:
+        serializedVersion: 2
+        x: 5186
+        y: 41
+        width: 177
+        height: 631
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f40bf4df204b33db0800000000000000
+      internalID: -4813305651796135857
       vertices: []
       indices: 
       edges: []
@@ -250,7 +327,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0501050e985feb8439700a63ab0d60e9
+    spriteID: ec72af5ae1b4f6a499d2dc4513302dd1
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +337,23 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pixilart-sprite (7)_0: 2699721380527466488
-      pixilart-sprite (7)_1: -6317328553093526140
-      pixilart-sprite (7)_2: -4293931877964787223
-      pixilart-sprite (7)_3: -7534931932984655772
-      pixilart-sprite (7)_4: 9135284674282138978
-      pixilart-sprite (7)_5: 800262850943670068
+      RangedAttack_0: 1292983933030286991
+      RangedAttack_1: -4804074815023235261
+      RangedAttack_10: 5453223713558060430
+      RangedAttack_11: 3906357980401835346
+      RangedAttack_12: 1841937239845147465
+      RangedAttack_13: -2621279625037040356
+      RangedAttack_14: 6256136382525159235
+      RangedAttack_15: -4813305651796135857
+      RangedAttack_16: 5147069688954190161
+      RangedAttack_2: -4543147093718545307
+      RangedAttack_3: -6381030032891834970
+      RangedAttack_4: -7489982310487186280
+      RangedAttack_5: 5767755925949721892
+      RangedAttack_6: -8843466686022899706
+      RangedAttack_7: 7458471224880725436
+      RangedAttack_8: -6902586407460851814
+      RangedAttack_9: -872959308543794750
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
