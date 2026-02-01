@@ -113,8 +113,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1335408309
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5704938559048430634, guid: 47e9e8cd402cffa4790683b9a049daad, type: 3}
@@ -144,12 +144,11 @@ MonoBehaviour:
   health: 100
   wanderMoveSpeed: 0.7
   attackMoveSpeed: 1.5
-  aggroRange: 10
+  aggroRange: 15
   attackDistance: 1.5
   wanderWait: 2
   player: {fileID: 0}
   damageCooldown: 0.8
-  rageIncrease: 50
   turnSpeed: 50
   left: {x: 0, y: 0, z: 0}
   spawn: {fileID: 8774638551454536696}

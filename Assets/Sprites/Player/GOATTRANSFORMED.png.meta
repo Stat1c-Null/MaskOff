@@ -1,0 +1,656 @@
+fileFormatVersion: 2
+guid: 1cacf704ff83db14382c5f67b5659731
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5738998217664157276
+    second: GOATTRANSFORMED_0
+  - first:
+      213: -2832539008801145258
+    second: GOATTRANSFORMED_1
+  - first:
+      213: -3897348801542626644
+    second: GOATTRANSFORMED_2
+  - first:
+      213: 6811866801226962615
+    second: GOATTRANSFORMED_3
+  - first:
+      213: 5484300234187111443
+    second: GOATTRANSFORMED_4
+  - first:
+      213: -2383879913446297153
+    second: GOATTRANSFORMED_5
+  - first:
+      213: -205116146266334039
+    second: GOATTRANSFORMED_6
+  - first:
+      213: -2676392855209684274
+    second: GOATTRANSFORMED_7
+  - first:
+      213: -1931125491946295095
+    second: GOATTRANSFORMED_8
+  - first:
+      213: -212348533114395799
+    second: GOATTRANSFORMED_9
+  - first:
+      213: 6623445657971228950
+    second: GOATTRANSFORMED_10
+  - first:
+      213: -3301371403385708114
+    second: GOATTRANSFORMED_11
+  - first:
+      213: -6891222197257844161
+    second: GOATTRANSFORMED_12
+  - first:
+      213: 641123296925263866
+    second: GOATTRANSFORMED_13
+  - first:
+      213: 169564826134621597
+    second: GOATTRANSFORMED_14
+  - first:
+      213: -8758409023118347281
+    second: GOATTRANSFORMED_15
+  - first:
+      213: -2946636647049893875
+    second: GOATTRANSFORMED_16
+  - first:
+      213: 6416038121037664193
+    second: GOATTRANSFORMED_17
+  - first:
+      213: -4201352686813149895
+    second: GOATTRANSFORMED_18
+  - first:
+      213: 4121958239243538219
+    second: GOATTRANSFORMED_19
+  - first:
+      213: -4816880032543199083
+    second: GOATTRANSFORMED_20
+  - first:
+      213: -4852686351955346606
+    second: GOATTRANSFORMED_21
+  - first:
+      213: -8817105767294862773
+    second: GOATTRANSFORMED_22
+  - first:
+      213: -2387079460899949748
+    second: GOATTRANSFORMED_23
+  - first:
+      213: 1064327160987969332
+    second: GOATTRANSFORMED_24
+  - first:
+      213: -6404753906942520297
+    second: GOATTRANSFORMED_25
+  - first:
+      213: 4472198617758918855
+    second: GOATTRANSFORMED_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_0
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 27
+        width: 366
+        height: 618
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9278d078bfa50b0800000000000000
+      internalID: -5738998217664157276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_1
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 450
+        height: 644
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e78f767ccc0b8d0800000000000000
+      internalID: -2832539008801145258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_2
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 20
+        width: 450
+        height: 625
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2e14ef9e5d9e9c0800000000000000
+      internalID: -3897348801542626644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_11
+      rect:
+        serializedVersion: 2
+        x: 4976
+        y: 20
+        width: 450
+        height: 646
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea1ef85333c2f22d0800000000000000
+      internalID: -3301371403385708114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_12
+      rect:
+        serializedVersion: 2
+        x: 5676
+        y: 20
+        width: 450
+        height: 646
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3ac8204ce57d50a0800000000000000
+      internalID: -6891222197257844161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_13
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 20
+        width: 555
+        height: 604
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af72572ed3ab5e800800000000000000
+      internalID: 641123296925263866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_14
+      rect:
+        serializedVersion: 2
+        x: 2884
+        y: 20
+        width: 555
+        height: 604
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9da72c9f4a6a5200800000000000000
+      internalID: 169564826134621597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_15
+      rect:
+        serializedVersion: 2
+        x: 3576
+        y: 20
+        width: 492
+        height: 604
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe37473c561e37680800000000000000
+      internalID: -8758409023118347281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_16
+      rect:
+        serializedVersion: 2
+        x: 4276
+        y: 20
+        width: 492
+        height: 604
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d08617ad4917b17d0800000000000000
+      internalID: -2946636647049893875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_17
+      rect:
+        serializedVersion: 2
+        x: 6341
+        y: 0
+        width: 506
+        height: 596
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cf80dd6da85a0950800000000000000
+      internalID: 6416038121037664193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_18
+      rect:
+        serializedVersion: 2
+        x: 7041
+        y: 20
+        width: 478
+        height: 576
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9358e56bdfbc1b5c0800000000000000
+      internalID: -4201352686813149895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_19
+      rect:
+        serializedVersion: 2
+        x: 7741
+        y: 20
+        width: 478
+        height: 576
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2f0b15fd23243930800000000000000
+      internalID: 4121958239243538219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_20
+      rect:
+        serializedVersion: 2
+        x: 8441
+        y: 13
+        width: 471
+        height: 576
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 590379e9121072db0800000000000000
+      internalID: -4816880032543199083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_21
+      rect:
+        serializedVersion: 2
+        x: 9141
+        y: 20
+        width: 478
+        height: 576
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25bb059397bc7acb0800000000000000
+      internalID: -4852686351955346606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_22
+      rect:
+        serializedVersion: 2
+        x: 9841
+        y: 13
+        width: 471
+        height: 576
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a7759050953a580800000000000000
+      internalID: -8817105767294862773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_23
+      rect:
+        serializedVersion: 2
+        x: 10541
+        y: 20
+        width: 478
+        height: 576
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c437d6aa0e36fded0800000000000000
+      internalID: -2387079460899949748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_24
+      rect:
+        serializedVersion: 2
+        x: 11241
+        y: 13
+        width: 471
+        height: 576
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 437ec73f9ef35ce00800000000000000
+      internalID: 1064327160987969332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_25
+      rect:
+        serializedVersion: 2
+        x: 11941
+        y: 13
+        width: 471
+        height: 576
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71455e6614ebd17a0800000000000000
+      internalID: -6404753906942520297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GOATTRANSFORMED_26
+      rect:
+        serializedVersion: 2
+        x: 12641
+        y: 13
+        width: 471
+        height: 576
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c86388b2f0701e30800000000000000
+      internalID: 4472198617758918855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b1aa53143f01a174ebccb6142b719db2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GOATTRANSFORMED_0: -5738998217664157276
+      GOATTRANSFORMED_1: -2832539008801145258
+      GOATTRANSFORMED_10: 6623445657971228950
+      GOATTRANSFORMED_11: -3301371403385708114
+      GOATTRANSFORMED_12: -6891222197257844161
+      GOATTRANSFORMED_13: 641123296925263866
+      GOATTRANSFORMED_14: 169564826134621597
+      GOATTRANSFORMED_15: -8758409023118347281
+      GOATTRANSFORMED_16: -2946636647049893875
+      GOATTRANSFORMED_17: 6416038121037664193
+      GOATTRANSFORMED_18: -4201352686813149895
+      GOATTRANSFORMED_19: 4121958239243538219
+      GOATTRANSFORMED_2: -3897348801542626644
+      GOATTRANSFORMED_20: -4816880032543199083
+      GOATTRANSFORMED_21: -4852686351955346606
+      GOATTRANSFORMED_22: -8817105767294862773
+      GOATTRANSFORMED_23: -2387079460899949748
+      GOATTRANSFORMED_24: 1064327160987969332
+      GOATTRANSFORMED_25: -6404753906942520297
+      GOATTRANSFORMED_26: 4472198617758918855
+      GOATTRANSFORMED_3: 6811866801226962615
+      GOATTRANSFORMED_4: 5484300234187111443
+      GOATTRANSFORMED_5: -2383879913446297153
+      GOATTRANSFORMED_6: -205116146266334039
+      GOATTRANSFORMED_7: -2676392855209684274
+      GOATTRANSFORMED_8: -1931125491946295095
+      GOATTRANSFORMED_9: -212348533114395799
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
