@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private GameObject tutorialScreen;
     void Start()
     {
         
@@ -26,6 +26,16 @@ public class MenuController : MonoBehaviour
     public void mainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void showTutorial()
+    {
+        tutorialScreen.SetActive(true);
+    }
+
+    public void hideTutorial()
+    {
+        tutorialScreen.SetActive(false);
     }
 
     // Update is called once per frame
