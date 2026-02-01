@@ -112,10 +112,12 @@ MonoBehaviour:
   health: 100
   wanderMoveSpeed: 0.7
   attackMoveSpeed: 1.5
-  aggroRange: 5
-  attackDistance: 5
+  aggroRange: 10
+  attackDistance: 4.5
   wanderWait: 2
   player: {fileID: 0}
+  damageCooldown: 0.1
+  rageIncrease: 50
   attackCooldown: 1.5
 --- !u!50 &964246733199731083
 Rigidbody2D:
