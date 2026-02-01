@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3725459173260333075}
   - component: {fileID: 7035492501368462567}
   - component: {fileID: 6156158704378722486}
+  - component: {fileID: 631429400645928767}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -221,11 +222,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Second[/Mouse/rightButton,/Keyboard/x]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: bf6e3f0c-c2fd-4753-9593-526f6d5268bf
-    m_ActionName: Player/New action
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 30139161-5f81-48eb-b0f8-759c9000240c
+    m_ActionId: 2665c8d4-0288-4277-9209-b953160ed9ea
     m_ActionName: 'Player/Pause[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
@@ -248,10 +245,21 @@ MonoBehaviour:
   PigDash: {fileID: 4052004572574731497}
   PigBlock: {fileID: 5263409562074670951}
   speed: 5
+  normalSpeed: 5
+  rageSpeed: 8
   facingRight: 1
   isAttackActive: 0
+  isRageAttackActive: 0
+  inRage: 0
   health: 100
+  rage: 0
+  rageDecrease: 5
   canGetHit: 1
+  normalDamageAmount: 20
+  rageDamageAmount: 30
+  receiveNormalStateDamage: 10
+  receiveRageStateDamage: 5
+  rageIncrease: 50
 --- !u!50 &3725459173260333075
 Rigidbody2D:
   serializedVersion: 5
@@ -347,6 +355,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.276645, y: 6.0494976}
   m_EdgeRadius: 0
+--- !u!114 &631429400645928767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3704827904490067568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74cbafa13695d6749801e6a0f920ad0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeflectionHandling
 --- !u!1 &4052004572574731497
 GameObject:
   m_ObjectHideFlags: 0

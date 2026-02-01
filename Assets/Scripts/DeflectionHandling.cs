@@ -3,18 +3,27 @@ using UnityEngine;
 public class DeflectionHandling : MonoBehaviour
 {
     private PlayerController playerController;
+    private float damageAmount;
 
     void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
     }
 
+    void Update()
+    {
+        if (playerController != null)
+        {
+            damageAmount = playerController.inRage ? playerController.rageDamageAmount : playerController.normalDamageAmount;
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && playerController != null && playerController.isAttackActive)
+        if (collision.gameObject.CompareTag("Enemy") && playerController != null && (playerController.isAttackActive || playerController.isRageAttackActive))
         {
             //Debug.Log("Attack hit enemy!");
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(20f);
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damageAmount);
         }
 
         if(collision.gameObject.CompareTag("Projectile")) 
@@ -22,7 +31,7 @@ public class DeflectionHandling : MonoBehaviour
             Rigidbody2D projectileRb = collision.gameObject.GetComponent<Rigidbody2D>();
             
             // Check if player is attacking
-            if (playerController != null && playerController.isAttackActive && projectileRb != null)
+            if (playerController != null && (playerController.isAttackActive || playerController.isRageAttackActive) && projectileRb != null)
             {
                 // Deflect projectile in opposite direction
                 projectileRb.linearVelocity = -projectileRb.linearVelocity * 2f;
