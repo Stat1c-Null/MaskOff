@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7035492501368462567}
   - component: {fileID: 6156158704378722486}
   - component: {fileID: 631429400645928767}
+  - component: {fileID: 6436693307427290820}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -222,8 +223,12 @@ MonoBehaviour:
     m_ActionName: 'Player/Second[/Mouse/rightButton,/Keyboard/x]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 2665c8d4-0288-4277-9209-b953160ed9ea
+    m_ActionId: bf6e3f0c-c2fd-4753-9593-526f6d5268bf
     m_ActionName: 'Player/Pause[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a44f3217-2bac-46aa-9384-3465e24dbe43
+    m_ActionName: 'Player/RageDebug[/Keyboard/l]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -241,6 +246,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffe46455bdf35745a7d16e3ee27983b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  hitSound: {fileID: 8300000, guid: 417bb9b26c2d8a7479fda2cfcffbde3b, type: 3}
+  block: {fileID: 8300000, guid: 37629ee1b77494c42aa6217fa1cfd13f, type: 3}
+  pigDash: {fileID: 8300000, guid: dd46bdbd551e82e469206193640560ad, type: 3}
+  goatSound: {fileID: 8300000, guid: 7b89cc54a6950c6499d4c3e032c2817f, type: 3}
+  goatHit: {fileID: 8300000, guid: 13a1f3adce65c884392dcdcfa2647ea2, type: 3}
+  goatDash: {fileID: 8300000, guid: ab754f8a8f03b9244b5f56a55998555c, type: 3}
+  goatWalk: {fileID: 8300000, guid: 37503560ce3fd6849948a968cafcf470, type: 3}
+  pigWalk: {fileID: 8300000, guid: 6f8dcfb7357a6b04693c2447aa88bb84, type: 3}
+  hurt: {fileID: 8300000, guid: 804f354f2f5ca8e479842496c177f5af, type: 3}
+  death: {fileID: 8300000, guid: ac4840a08a4ed8b439697df6fba9710a, type: 3}
+  woosh: {fileID: 8300000, guid: fca75aa08731bf74498e210d89c18f67, type: 3}
+  transform: {fileID: 8300000, guid: bbceceb149249194da56d4faacb3ee6c, type: 3}
   PigAttack: {fileID: 4751103246061212544}
   PigDash: {fileID: 4052004572574731497}
   PigBlock: {fileID: 5263409562074670951}
@@ -367,6 +384,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74cbafa13695d6749801e6a0f920ad0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeflectionHandling
+--- !u!82 &6436693307427290820
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3704827904490067568}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4052004572574731497
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +639,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.8853705, y: 0.092790365}
+  m_Offset: {x: 3.1910374, y: 0.5940733}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -535,7 +649,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.3284945, y: 5.1270566}
+  m_Size: {x: 4.9398284, y: 4.1244907}
   m_EdgeRadius: 0
 --- !u!114 &1029470465855668065
 MonoBehaviour:
@@ -707,7 +821,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.8853705, y: 0.092790365}
+  m_Offset: {x: 0.76622677, y: 0.051988363}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -717,7 +831,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.3284945, y: 5.1270566}
+  m_Size: {x: 4.566782, y: 5.8148627}
   m_EdgeRadius: 0
 --- !u!114 &8177733312142084013
 MonoBehaviour:
@@ -889,7 +1003,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.8853705, y: 0.092790365}
+  m_Offset: {x: 3.056973, y: -0.09373355}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -899,7 +1013,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.3284945, y: 5.1270566}
+  m_Size: {x: 7.865922, y: 5.5001044}
   m_EdgeRadius: 0
 --- !u!114 &7500137829735770181
 MonoBehaviour:

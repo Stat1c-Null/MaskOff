@@ -170,29 +170,13 @@ public class PlayerController : MonoBehaviour
         }
         if (secondAction.IsPressed() && !inRage && canBlock) //block for pig
         {
+            PBHB.enabled = true;
             audioSource.PlayOneShot(block);
             canBlock = false;
             successfulBlock = false;
             
             anim.Play("PigBlock");
-            while (anim.GetCurrentAnimatorStateInfo(0).IsName("PigBlock"))
-            {
-                
-                if (successfulBlock)
-                {
-                    //CODE HERE WILL VALIDATE HIT AND IF TRUE
-
-
-
-                    PBHB.enabled = true;
-                    anim.Play("GoodBlock");
-                    EnableActions();
-
-                    //AND can
-                    //++BIG RAGE INCREASE++
-
-                }
-            }
+            
 
             PBHB.enabled = false;
             successfulBlock = true;
@@ -366,12 +350,7 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
-    /*IEnumerator RageCooldown()
-    {
-        canRage = false;
-        yield return new WaitForSeconds(2f); // WILL BE MUCH LONGER
-        canRage = true;
-    }*/
+    
 
     IEnumerator BadBlockCooldown()
     {
