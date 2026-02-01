@@ -3,17 +3,21 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] protected GameObject player;
-
-    void OnTriggerEnter2D(Collider2D col)
+    void Start()
     {
-        if(col.CompareTag("Player"))
+        player = GameObject.FindWithTag("Player");
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        /*if(collision.gameObject.CompareTag("Player"))
         {
-            if(col.gameObject.GetComponent<PlayerController>().canGetHit == true)
+            if(collision.gameObject.GetComponent<PlayerController>().canGetHit == true && player.GetComponent<PlayerController>().isAttackActive == false)
             {
-                col.gameObject.GetComponent<PlayerController>().Hit();
+                collision.gameObject.GetComponent<PlayerController>().Hit();
                 Debug.Log("Player hit by projectile!");
             }      
             Destroy(gameObject);
-        }
+        }*/
     }
 }

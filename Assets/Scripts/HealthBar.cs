@@ -9,9 +9,8 @@ public class HealthBar : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
