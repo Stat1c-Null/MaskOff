@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     [SerializeField] private GameObject tutorialScreen;
+    [SerializeField] private GameObject creditsScreen;
+
     void Start()
     {
         
@@ -36,6 +38,16 @@ public class MenuController : MonoBehaviour
     public void hideTutorial()
     {
         tutorialScreen.SetActive(false);
+    }
+
+    public void showCredits()
+    {
+        creditsScreen.SetActive(true);
+    }
+
+    public void hideCredits()
+    {
+        creditsScreen.SetActive(false);
     }
 
     // Update is called once per frame
