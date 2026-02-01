@@ -32,6 +32,13 @@ public class Enemy : MonoBehaviour
     protected Animator anim;
     [SerializeField] protected float damageCooldown = 0.8f;
     protected bool canTakeDamage = true;
+    public enum Direction
+    {
+        Left,
+        Right
+    }
+
+    protected Direction currentDirection = Direction.Left;
 
     void Start()
     {

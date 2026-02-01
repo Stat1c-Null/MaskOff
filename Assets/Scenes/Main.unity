@@ -258,7 +258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8065676831829589769, guid: 6892f24bb599837c2b194bdc5f8f865c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8916158437001782196, guid: 6892f24bb599837c2b194bdc5f8f865c, type: 3}
       propertyPath: m_Size.x
@@ -468,6 +468,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2450777509155350234, guid: 8d28a7a8455d8dbc2b8cea8dba39c95d, type: 3}
+      propertyPath: attackDistance
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3544026287581197193, guid: 8d28a7a8455d8dbc2b8cea8dba39c95d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.67
