@@ -218,11 +218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6191160458438989615, guid: 6892f24bb599837c2b194bdc5f8f865c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.1799145
+      value: 10.47
       objectReference: {fileID: 0}
     - target: {fileID: 6191160458438989615, guid: 6892f24bb599837c2b194bdc5f8f865c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.088964
+      value: -7.15
       objectReference: {fileID: 0}
     - target: {fileID: 6191160458438989615, guid: 6892f24bb599837c2b194bdc5f8f865c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -259,6 +259,10 @@ PrefabInstance:
     - target: {fileID: 8065676831829589769, guid: 6892f24bb599837c2b194bdc5f8f865c, type: 3}
       propertyPath: m_Name
       value: RangedEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065676831829589769, guid: 6892f24bb599837c2b194bdc5f8f865c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -368,7 +372,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.7717302, y: 6.32}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -376,6 +380,11 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1665250558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8493131665786449195, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+  m_PrefabInstance: {fileID: 1746339267}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1740020607 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6288996140385691572, guid: 8d28a7a8455d8dbc2b8cea8dba39c95d, type: 3}
@@ -419,7 +428,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.0500002, y: 6.2500005}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -559,11 +568,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3544026287581197193, guid: 8d28a7a8455d8dbc2b8cea8dba39c95d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.67
+      value: 7.52
       objectReference: {fileID: 0}
     - target: {fileID: 3544026287581197193, guid: 8d28a7a8455d8dbc2b8cea8dba39c95d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00732
+      value: 4.65
       objectReference: {fileID: 0}
     - target: {fileID: 3544026287581197193, guid: 8d28a7a8455d8dbc2b8cea8dba39c95d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -603,7 +612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6288996140385691572, guid: 8d28a7a8455d8dbc2b8cea8dba39c95d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -764,6 +773,14 @@ PrefabInstance:
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 1746339268}
+    - target: {fileID: 4673608469015703344, guid: 1e5e38110f09c014a9d93cdb7de825fd, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1665250558}
+    - target: {fileID: 4673608469015703344, guid: 1e5e38110f09c014a9d93cdb7de825fd, type: 3}
+      propertyPath: pause.m_Name
+      value: Pause
+      objectReference: {fileID: 0}
     - target: {fileID: 7631469425186718462, guid: 1e5e38110f09c014a9d93cdb7de825fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960

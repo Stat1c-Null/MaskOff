@@ -27,7 +27,6 @@ public class CloseRangeEnemy : Enemy
         }
         else if (currentState == State.Attacking)
         {
-            anim.Play("CloseAttack");
             MoveTowards(player.transform.position);
         }
     }
@@ -37,6 +36,7 @@ public class CloseRangeEnemy : Enemy
         if (player.GetComponent<PlayerController>().canGetHit == true)
         {
             Debug.Log("Attacking the player with a melee attack!");
+            //anim.Play("CloseAttack");
             player.GetComponent<PlayerController>().Hit();
         }
         

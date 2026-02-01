@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     bool canBlock = true;
     bool successfulBlock = true;
+    public bool isAttackActive = false;
 
     bool inRage = false;
     //TO WHOMEVER IS DEALING WITH DAMAGE, you can put the player into the fall animation by using anim.SetBool("isHurt",true);
@@ -169,10 +170,12 @@ public class PlayerController : MonoBehaviour
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("PigSwingRight"))
         {
             PAHB.enabled = true;
+            isAttackActive = true;
         }
         else
         {
             PAHB.enabled = false;
+            isAttackActive = false;
         }
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("PigDash"))

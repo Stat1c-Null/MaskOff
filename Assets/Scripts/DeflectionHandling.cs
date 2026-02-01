@@ -11,34 +11,29 @@ public class DeflectionHandling : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && playerController != null && playerController.isAttackActive)
         {
             Debug.Log("Attack hit enemy!");
         }
 
         if(collision.gameObject.CompareTag("Projectile")) 
         {
-            //Deflect projectile in opposite direction
-            Debug.Log("Projectile collision detected!");
-            //Destroy(collision.gameObject);
-            /*Rigidbody2D projectileRb = collision.gameObject.GetComponent<Rigidbody2D>();
-            if (projectileRb != null)
+            Rigidbody2D projectileRb = collision.gameObject.GetComponent<Rigidbody2D>();
+            
+            // Check if player is attacking
+            if (playerController != null && playerController.isAttackActive && projectileRb != null)
             {
-                projectileRb.linearVelocity = -projectileRb.linearVelocity;
+                // Deflect projectile in opposite direction
+                projectileRb.linearVelocity = -projectileRb.linearVelocity * 2f;
                 Debug.Log("Projectile deflected!");
-            }*/
-        }
-    }
-
-    /*void OnCollisionStay2D(Collision2D collision)
-    {
-        // Called every frame while collider is touching
-        if (playerController != null && playerController.isAttackActive)
-        {
-            if(collision.gameObject.CompareTag("Enemy"))
+            }
+            else
             {
-                Debug.Log("Still touching enemy during attack");
+                // Projectile hits player while not attacking - deal damage
+                Debug.Log("Player hit by projectile!");
+                playerController.Hit();
+                Destroy(collision.gameObject);
             }
         }
-    }*/
+    }
 }
