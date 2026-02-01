@@ -5,7 +5,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
 
-    
+    public bool blocking = false;
     public AudioClip hitSound;
     public AudioClip block;
     public AudioClip pigDash; 
@@ -135,7 +135,15 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isWalking", false);
         }
 
-
+        if (blocking && !anim.GetCurrentAnimatorStateInfo(0).IsName("PigBlock"))
+        {
+            blocking = false;
+            PBHB.enabled = false;
+            StartCoroutine(BadBlockCooldown());
+            PI.actions.Disable();
+            Invoke("EnableActions", 0.5f);
+            
+        }
 
         //Set rage to be active
         if (rageAction.IsPressed() && !inRage && canRage)
@@ -178,21 +186,21 @@ public class PlayerController : MonoBehaviour
         }
         if (secondAction.IsPressed() && !inRage && canBlock) //block for pig
         {
+            
             PBHB.enabled = true;
             audioSource.PlayOneShot(block);
             canBlock = false;
-            successfulBlock = false;
+            
             
             anim.Play("PigBlock");
+
+
+          
             
 
-            PBHB.enabled = false;
-            successfulBlock = true;
-            StartCoroutine(BadBlockCooldown());
-
-            PI.actions.Disable();
-            Invoke("EnableActions", 0.5f);
+            
         }
+        
 
         if (secondAction.IsPressed() && inRage) //grab for goat guy
         {
@@ -202,10 +210,10 @@ public class PlayerController : MonoBehaviour
 
         if (attackAction.IsPressed() && !inRage)
         {
-            if (audioSource.clip.name != "Bat Hit" && audioSource.clip.name != "Goat Hit")
-            {
-                audioSource.PlayOneShot(hitSound);
-            }
+            // if (audioSource.clip.name != "Bat Hit" && audioSource.clip.name != "Goat Hit")
+            // {
+            //     audioSource.PlayOneShot(hitSound);
+            // }
 
 
                 
@@ -216,10 +224,10 @@ public class PlayerController : MonoBehaviour
 
         if (attackAction.IsPressed() && inRage)
         {
-            if (audioSource.clip.name != "Bat Hit" && audioSource.clip.name != "Goat Hit")
-            {
-                audioSource.PlayOneShot(goatHit);
-            }
+            // if (audioSource.clip.name != "Bat Hit" && audioSource.clip.name != "Goat Hit")
+            // {
+            //     audioSource.PlayOneShot(goatHit);
+            // }
 
 
             
@@ -274,6 +282,15 @@ public class PlayerController : MonoBehaviour
             isRageAttackActive = false;
         }
         
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("PigBlock"))
+        {
+            blocking = true;
+        }
+        else
+        {
+            
+        }
+
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("PigDash"))
         {
             PDHB.enabled = true;
@@ -409,6 +426,13 @@ public class PlayerController : MonoBehaviour
     public float GetRage()
     {
         return rage;
+    }
+    public void Block()
+    {
+        IncreaseRage(50);
+        anim.Play("GoodBlock");
+        PBHB.enabled = false;
+
     }
 
     public void IncreaseRage(float amount)
