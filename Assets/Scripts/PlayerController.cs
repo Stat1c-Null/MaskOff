@@ -203,10 +203,10 @@ public class PlayerController : MonoBehaviour
 
         if (attackAction.IsPressed() && !inRage)
         {
-            if (audioSource.clip.name != "Bat Hit" && audioSource.clip.name != "Goat Hit")
-            {
-                audioSource.PlayOneShot(hitSound);
-            }
+            // if (audioSource.clip.name != "Bat Hit" && audioSource.clip.name != "Goat Hit")
+            // {
+            //     audioSource.PlayOneShot(hitSound);
+            // }
 
 
                 
@@ -217,10 +217,10 @@ public class PlayerController : MonoBehaviour
 
         if (attackAction.IsPressed() && inRage)
         {
-            if (audioSource.clip.name != "Bat Hit" && audioSource.clip.name != "Goat Hit")
-            {
-                audioSource.PlayOneShot(goatHit);
-            }
+            // if (audioSource.clip.name != "Bat Hit" && audioSource.clip.name != "Goat Hit")
+            // {
+            //     audioSource.PlayOneShot(goatHit);
+            // }
 
 
             

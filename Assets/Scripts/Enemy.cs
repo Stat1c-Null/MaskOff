@@ -19,6 +19,9 @@ public class Enemy : MonoBehaviour
     public EnemyType enemyType;
     public State currentState;
 
+    public AudioClip hitSound;
+    public AudioClip goatHit;
+    private AudioSource audioSource;
     [SerializeField] protected float health;
     [SerializeField] protected float wanderMoveSpeed;
     [SerializeField] protected float attackMoveSpeed;
@@ -43,6 +46,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         tf = GetComponent<Transform>();
         currentState = State.Wandering;
         player = GameObject.FindWithTag("Player");
@@ -82,7 +86,15 @@ public class Enemy : MonoBehaviour
             return;
         health -= damage;
         canTakeDamage = false;
-
+        if(player.GetComponent<PlayerController>().inRage == true)
+        {
+            audioSource.PlayOneShot(goatHit);
+        }
+        else
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
+        
         StartCoroutine(DamageCooldown());
         if (health <= 0)
         {
