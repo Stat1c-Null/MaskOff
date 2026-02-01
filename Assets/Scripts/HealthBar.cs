@@ -1,13 +1,17 @@
 using UnityEngine;
+using System.Collections;
 
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private PlayerController player;
     private Animator anim;
+    
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        
     }
 
     // Update is called once per frame
@@ -28,10 +32,15 @@ public class HealthBar : MonoBehaviour
         else if (player.GetHealth() <= 20 && player.GetHealth() >= 1)
         {
             anim.SetInteger("HealthStatus", 4);
+            
         }
         else if (player.GetHealth() == 0)
         {
+            
+            StartCoroutine("DeathSequence");
             anim.SetInteger("HealthStatus", 5);
         }
-    }
+        
+     }
+
 }
