@@ -16,6 +16,9 @@ public class GameController : MonoBehaviour
     {
         pause = InputSystem.actions.FindAction("Pause");
         Time.timeScale = 1f;
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+            return;
+
         player = GameObject.FindWithTag("Player");
         if (player == null)
         {
@@ -44,7 +47,7 @@ public class GameController : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("IntroScene");
     }
 
     public void quitGame()

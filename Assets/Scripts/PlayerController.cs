@@ -108,7 +108,14 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        
+        // Don't process input when dialog is active
+        if (DialogController.IsGamePaused)
+        {
+            rb.linearVelocity = Vector2.zero;
+            moveInput = Vector2.zero;
+            return;
+        }
+
         if (InputSystem.actions.FindAction("RageDebug").IsPressed())
         {
             rage = 100f;
@@ -317,6 +324,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        // Ignore input when dialog is active
+        if (DialogController.IsGamePaused)
+            return;
+
+        moveInput = context.ReadValue<Vector2>();
         audioSource.loop = true;
         if (!inRage)
         {
@@ -425,15 +437,17 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseRage(float amount)
     {
-        rage += amount;
-        if (rage > rageMax)
-        {
-            rage = rageMax;
-        }
-        if (rage >= rageMax)
-        {
-            canRage = true;
-        }
+        if(!inRage) {
+            rage += amount;
+            if (rage > rageMax)
+            {
+                rage = rageMax;
+            }
+            if (rage >= rageMax)
+            {
+                canRage = true;
+            }
+        }   
     }
     
 

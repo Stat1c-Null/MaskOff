@@ -17,6 +17,10 @@ public class RangedEnemy : Enemy
 
     void Update()
     {
+        // Don't process when dialog is active
+        if (DialogController.IsGamePaused)
+            return;
+
         dist = player.transform.position - tf.position; //vector between player and enemy
         inRange = (dist.magnitude <= aggroRange);
 

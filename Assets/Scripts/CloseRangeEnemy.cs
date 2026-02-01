@@ -10,6 +10,10 @@ public class CloseRangeEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
+        // Don't process when dialog is active
+        if (DialogController.IsGamePaused)
+            return;
+
         //Calculate distance to player  
         distanceToPlayer = Vector3.Distance(tf.position, player.GetComponent<Transform>().position);
         if (distanceToPlayer < aggroRange && currentState != State.Attacking)
