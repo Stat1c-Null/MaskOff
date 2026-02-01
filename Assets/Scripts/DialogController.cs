@@ -65,7 +65,6 @@ public class DialogController : MonoBehaviour
         // Pause the game
         Time.timeScale = 0f;
         IsGamePaused = true;
-        Debug.Log("DialogController: Game PAUSED - TimeScale set to " + Time.timeScale);
 
         // Subscribe to input action
         if (clickAction != null)
@@ -129,7 +128,6 @@ public class DialogController : MonoBehaviour
         // Unpause the game
         Time.timeScale = 1f;
         IsGamePaused = false;
-        Debug.Log("DialogController: Game UNPAUSED - TimeScale set to " + Time.timeScale);
 
         // Handle end action
         switch (endAction)
