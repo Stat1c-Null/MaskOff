@@ -222,10 +222,6 @@ MonoBehaviour:
     m_ActionName: 'Player/Second[/Mouse/rightButton,/Keyboard/x]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: bf6e3f0c-c2fd-4753-9593-526f6d5268bf
-    m_ActionName: Player/New action
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 2665c8d4-0288-4277-9209-b953160ed9ea
     m_ActionName: 'Player/Pause[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -250,7 +246,7 @@ MonoBehaviour:
   PigBlock: {fileID: 5263409562074670951}
   speed: 5
   normalSpeed: 5
-  rageSpeed: 7
+  rageSpeed: 8
   facingRight: 1
   isAttackActive: 0
   isRageAttackActive: 0
@@ -263,6 +259,7 @@ MonoBehaviour:
   rageDamageAmount: 30
   receiveNormalStateDamage: 10
   receiveRageStateDamage: 5
+  rageIncrease: 50
 --- !u!50 &3725459173260333075
 Rigidbody2D:
   serializedVersion: 5

@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
     //How much damage the player receives in different states
     [SerializeField] private float receiveNormalStateDamage;
     [SerializeField] private float receiveRageStateDamage;
+    public float rageIncrease; //Rage increase per killed enemy
 
     void Start()
     {
