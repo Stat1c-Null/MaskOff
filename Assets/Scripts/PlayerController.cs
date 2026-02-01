@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public GameObject PigAttack;
     public GameObject PigDash;
     public GameObject PigBlock;
-
+    BoxCollider2D PHB; 
     BoxCollider2D PAHB;
     BoxCollider2D PDHB;
     BoxCollider2D PBHB;
@@ -85,6 +85,8 @@ public class PlayerController : MonoBehaviour
 
         //getting components, you know how it be.
         PI = GetComponent<PlayerInput>();
+
+        PHB = GetComponent<BoxCollider2D>();
 
         PAHB = PigAttack.GetComponent<BoxCollider2D>(); //pig attack hit box
         PDHB = PigDash.GetComponent<BoxCollider2D>(); // ''  dash '' ''
@@ -429,9 +431,10 @@ public class PlayerController : MonoBehaviour
     }
     public void Block()
     {
+        PBHB.enabled = false;
         IncreaseRage(50);
         anim.Play("GoodBlock");
-        PBHB.enabled = false;
+        
 
     }
 
