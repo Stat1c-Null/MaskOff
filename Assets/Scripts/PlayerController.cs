@@ -82,8 +82,14 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        // Don't process input when dialog is active
+        if (DialogController.IsGamePaused)
+        {
+            rb.linearVelocity = Vector2.zero;
+            moveInput = Vector2.zero;
+            return;
+        }
 
-        
         anim.SetBool("RAttack", false); //set bool to false to allow attacks once animation is over
         rb.linearVelocity = moveInput * speed;
         if (rb.linearVelocity.x == 0 && rb.linearVelocity.y == 0)
@@ -246,7 +252,10 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        
+        // Ignore input when dialog is active
+        if (DialogController.IsGamePaused)
+            return;
+
         moveInput = context.ReadValue<Vector2>();
         if (moveInput.x < 0)
         {
@@ -341,15 +350,17 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseRage(float amount)
     {
-        rage += amount;
-        if (rage > rageMax)
-        {
-            rage = rageMax;
-        }
-        if (rage >= rageMax)
-        {
-            canRage = true;
-        }
+        if(!inRage) {
+            rage += amount;
+            if (rage > rageMax)
+            {
+                rage = rageMax;
+            }
+            if (rage >= rageMax)
+            {
+                canRage = true;
+            }
+        }   
     }
 }
 

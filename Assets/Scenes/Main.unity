@@ -1013,11 +1013,144 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2118992638}
+    - target: {fileID: 8588184972418865706, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709499181627373396, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709499181627373396, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709499181627373396, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 311
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8588184972418865706, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1746339273}
   m_SourcePrefab: {fileID: 100100000, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+--- !u!1 &1746339268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8925785630607323725, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+  m_PrefabInstance: {fileID: 1746339267}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1746339269 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3743832889266858517, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+  m_PrefabInstance: {fileID: 1746339267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1746339270 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7526406222178261478, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+  m_PrefabInstance: {fileID: 1746339267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &1746339271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5887113924753568890, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+  m_PrefabInstance: {fileID: 1746339267}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1746339272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8588184972418865706, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+  m_PrefabInstance: {fileID: 1746339267}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1746339273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746339272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b16fcd089f154744a4e100f3fe18f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogController
+  dialogBox: {fileID: 1746339271}
+  dialogText: {fileID: 1746339270}
+  nameText: {fileID: 1746339269}
+  clickerIcon: {fileID: 1746339268}
+  dialogEntries:
+  - speakerName: Butcher
+    dialogText: "I feel so cold\u2026."
+  - speakerName: Butcher
+    dialogText: Everything around me saps my body of warmth.
+  - speakerName: Butcher
+    dialogText: "This air is like poison\u2026 slowly killing all of us off one by
+      one."
+  - speakerName: Butcher
+    dialogText: "The black smog is like a cheap coffin\u2026.sufficating and confining."
+  - speakerName: Butcher
+    dialogText: The rats are the worms that break through the coffin and feast on
+      us.
+  - speakerName: Butcher
+    dialogText: "Everything can somehow find food\u2026."
+  - speakerName: Butcher
+    dialogText: "So why\u2026.can\u2019t I?"
+  - speakerName: Butcher
+    dialogText: "What is my purpose?....Where is my\u2026\u2026\u2026\u2026instinct?"
+  - speakerName: Butcher
+    dialogText: ....so much trash.
+  - speakerName: Butcher
+    dialogText: "....blood, guts and more guts\u2026."
+  - speakerName: Butcher
+    dialogText: "They only took the fat  away from this pig\u2026.everything else
+      is still intact"
+  - speakerName: Pig Mask
+    dialogText: ....Put me on.
+  - speakerName: Butcher
+    dialogText: ....huh?
+  - speakerName: Pig Mask
+    dialogText: ....Put me on.
+  - speakerName: Butcher
+    dialogText: .......
+  - speakerName: Pig Mask
+    dialogText: Weren't asking where your instincts were? I bet they are screaming
+      at the seams of your skin.
+  - speakerName: Butcher
+    dialogText: I feel itchy
+  - speakerName: Pig Mask
+    dialogText: There was a goat on my farm. He would always get the best treatment
+      and he would look and bleat at all of us like he was better.
+  - speakerName: Pig Mask
+    dialogText: "His feeding trough was filled with feast grass, hay and vegetables\u2026.He
+      didn\u2019t even eat a good portion of it but everyday. It would be changed
+      out."
+  - speakerName: Pig Mask
+    dialogText: Mine was filled with slop and I was tired of it ... .Then I thought
+      of it. Eating the goat to get the food he ate?
+  - speakerName: Pig Mask
+    dialogText: It was so warm! The hay, the grass, the vegetables..the blood spilling
+      out my mouth. The chewy meat.I never felt so warm.
+  - speakerName: Butcher
+    dialogText: "Warm\u2026\u2026.Warm\u2026\u2026"
+  - speakerName: Pig Mask
+    dialogText: Put me on
+  - speakerName: Butcher
+    dialogText: ".....I must\u2026.EAT THE GOAT!"
+  endAction: 0
+  nextSceneName: 
+  clickAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
 --- !u!1001 &1768040172
 PrefabInstance:
   m_ObjectHideFlags: 0
