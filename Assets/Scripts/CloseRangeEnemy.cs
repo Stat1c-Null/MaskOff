@@ -40,7 +40,14 @@ public class CloseRangeEnemy : Enemy
         {
             Debug.Log("Attacking the player with a melee attack!");
             canAttack = false;
-            anim.Play("CloseAttack");
+            anim.SetBool("Attacking", true);
+            //Change attack directions
+            if (currentDirection == Direction.Left)
+            {
+                tf.localScale = new Vector3(1f, 1f, 1f);   
+            } else if (currentDirection == Direction.Right) {
+                tf.localScale = new Vector3(-1f, 1f, 1f);
+            }
             player.GetComponent<PlayerController>().Hit();
             StartCoroutine(AttackCooldown());
         }
@@ -61,6 +68,19 @@ public class CloseRangeEnemy : Enemy
         } else {
             Vector3 direction = (targetPosition - transform.position).normalized;
             transform.Translate(direction * attackMoveSpeed * Time.deltaTime, Space.World);
+            anim.SetBool("Attacking", false);
+            
+            // Flip sprite based on movement direction
+            if (direction.x < 0)
+            {
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+                currentDirection = Direction.Left;
+            }
+            else if (direction.x > 0)
+            {
+                transform.localScale = new Vector3(1f, 1f, 1f);
+                currentDirection = Direction.Right;
+            }
         }
     }
 }
