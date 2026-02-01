@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class CloseRangeEnemy : Enemy
 {   
+    private bool canAttack = true;
+    [SerializeField] private float attackCooldown = 1.5f;
+
     // Update is called once per frame
     void Update()
     {
@@ -33,13 +36,20 @@ public class CloseRangeEnemy : Enemy
 
     void MeleeAttack()
     {
-        if (player.GetComponent<PlayerController>().canGetHit == true)
+        if (canAttack && player.GetComponent<PlayerController>().canGetHit == true)
         {
             Debug.Log("Attacking the player with a melee attack!");
-            //anim.Play("CloseAttack");
+            canAttack = false;
+            anim.Play("CloseAttack");
             player.GetComponent<PlayerController>().Hit();
+            StartCoroutine(AttackCooldown());
         }
-        
+    }
+
+    IEnumerator AttackCooldown()
+    {
+        yield return new WaitForSeconds(attackCooldown);
+        canAttack = true;
     }
 
     void MoveTowards(Vector3 targetPosition)
