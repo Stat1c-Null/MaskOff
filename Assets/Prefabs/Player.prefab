@@ -217,8 +217,16 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 1940e255-011b-42a1-a2b7-429e36a90a90
-    m_ActionName: 'Player/Second[/Mouse/rightButton,/Touchscreen/touch0/press,/Touchscreen/touch1/press,/Touchscreen/touch2/press,/Touchscreen/touch3/press,/Touchscreen/touch4/press,/Touchscreen/touch5/press,/Touchscreen/touch6/press,/Touchscreen/touch7/press,/Touchscreen/touch8/press,/Touchscreen/touch9/press,/Keyboard/x]'
+    m_ActionId: 5a98499d-dc0e-41ec-9e76-a1b8489ae95b
+    m_ActionName: 'Player/Second[/Mouse/rightButton,/Keyboard/x]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bf6e3f0c-c2fd-4753-9593-526f6d5268bf
+    m_ActionName: Player/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 30139161-5f81-48eb-b0f8-759c9000240c
+    m_ActionName: 'Player/Pause[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -241,6 +249,9 @@ MonoBehaviour:
   PigBlock: {fileID: 5263409562074670951}
   speed: 5
   facingRight: 1
+  isAttackActive: 0
+  health: 100
+  canGetHit: 1
 --- !u!50 &3725459173260333075
 Rigidbody2D:
   serializedVersion: 5
@@ -267,7 +278,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &7035492501368462567
 Animator:
   serializedVersion: 7

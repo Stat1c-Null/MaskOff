@@ -278,7 +278,6 @@ public class PlayerController : MonoBehaviour
     IEnumerator Damage()
     {
         health -= 10;
-        Debug.Log(health);
         if (!inRage)
         {
             anim.Play("PigHurt");

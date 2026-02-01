@@ -37,7 +37,7 @@ public class RangedEnemy : Enemy
                 StartCoroutine(Wander());
             }
         }
-        else if (currentState == State.Attacking)
+        else if (currentState == State.Attacking && canTakeDamage == true)
         {
             anim.Play("RangedAttack");
             RangeAttack();

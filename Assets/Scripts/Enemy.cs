@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
     protected Transform tf;
     protected float distanceToPlayer;
     protected Animator anim;
+    [SerializeField] protected float damageCooldown = 0.8f;
+    protected bool canTakeDamage = true;
 
     void Start()
     {
@@ -64,5 +66,29 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(duration);
         choosingDirection = false;
     }
-    
+
+    public void TakeDamage(float damage)
+    {
+        if(!canTakeDamage)
+            return;
+        health -= damage;
+        canTakeDamage = false;
+        StartCoroutine(DamageCooldown());
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    protected virtual void Die()
+    {
+        Debug.Log("Enemy died.");
+        Destroy(gameObject);
+    }
+
+    private IEnumerator DamageCooldown()
+    {
+        yield return new WaitForSeconds(damageCooldown);
+        canTakeDamage = true;
+    }
 }

@@ -54,7 +54,7 @@ public class CloseRangeEnemy : Enemy
 
     void MoveTowards(Vector3 targetPosition)
     {
-        if (Vector3.Distance(transform.position, targetPosition) <= attackDistance)
+        if (Vector3.Distance(transform.position, targetPosition) <= attackDistance && canTakeDamage == true)
         {
             MeleeAttack();
             return;

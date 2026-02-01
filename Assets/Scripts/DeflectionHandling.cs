@@ -13,7 +13,8 @@ public class DeflectionHandling : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") && playerController != null && playerController.isAttackActive)
         {
-            Debug.Log("Attack hit enemy!");
+            //Debug.Log("Attack hit enemy!");
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(20f);
         }
 
         if(collision.gameObject.CompareTag("Projectile")) 
@@ -25,12 +26,12 @@ public class DeflectionHandling : MonoBehaviour
             {
                 // Deflect projectile in opposite direction
                 projectileRb.linearVelocity = -projectileRb.linearVelocity * 2f;
-                Debug.Log("Projectile deflected!");
+                //Debug.Log("Projectile deflected!");
             }
             else
             {
                 // Projectile hits player while not attacking - deal damage
-                Debug.Log("Player hit by projectile!");
+                //Debug.Log("Player hit by projectile!");
                 playerController.Hit();
                 Destroy(collision.gameObject);
             }
