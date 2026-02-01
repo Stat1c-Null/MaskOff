@@ -1,12 +1,10 @@
 using UnityEngine;
-using System.Collections;
 
-public class HealthBar : MonoBehaviour
+public class RageBar : MonoBehaviour
 {
     [SerializeField] private PlayerController player;
     private Animator anim;
     
-
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
@@ -16,7 +14,6 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetInteger("HealthStatus", 5 - Mathf.CeilToInt(player.GetHealth() / 20f));
-     }
-
+        anim.SetInteger("RageBarStatus", Mathf.FloorToInt(player.GetRage() / 25f));
+    }
 }

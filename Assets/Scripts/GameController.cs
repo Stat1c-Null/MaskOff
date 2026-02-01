@@ -20,6 +20,18 @@ public class GameController : MonoBehaviour
         {
             Debug.LogError("Player object not found in the scene. Please ensure there is a GameObject with the tag 'Player'.");
         }
+        GameObject canvas = GameObject.Find("Canvas");
+        pauseMenu = canvas.transform.Find("Pause").gameObject;
+        if (pauseMenu == null)
+        {
+            Debug.LogError("PauseMenu object not found in the scene. Please ensure there is a GameObject with the tag 'Pause'.");
+        }
+
+        gameOver = canvas.transform.Find("GameOver").gameObject;
+        if (gameOver == null)
+        {
+            Debug.LogError("GameOver object not found in the scene. Please ensure there is a GameObject with the tag 'GameOver'.");
+        }
     }
 
     void Start()

@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     private Vector2 moveInput;
     public float speed = 1.2f;
+    public float normalSpeed = 5f;
+    public float rageSpeed = 7f;
     private Animator anim;
     InputAction secondAction;
     InputAction attackAction;
@@ -29,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public bool facingRight = true;
     PlayerInput PI;
     bool canDash = true;
-    bool canRage = true; //WILL BE CHANGED LATER
+    bool canRage = false;
     bool secondDash = false;
 
     bool canBlock = true;
@@ -40,9 +42,12 @@ public class PlayerController : MonoBehaviour
     //TO WHOMEVER IS DEALING WITH DAMAGE, you can put the player into the fall animation by using anim.SetBool("isHurt",true);
 
     [SerializeField] protected float health = 100f;
+    [SerializeField] protected float rage;
+    private float rageMax = 100f;
+    [SerializeField] private float rageDecrease = 5f;
     public bool canGetHit = true;
     private float damageCD = 2f;
-
+    private bool rageIsOver = false;
 
     void Start()
     {
@@ -65,6 +70,7 @@ public class PlayerController : MonoBehaviour
         rageAction = InputSystem.actions.FindAction("RAGE");
         move = InputSystem.actions.FindAction("Move");
         dashAction = InputSystem.actions.FindAction("Sprint");
+        speed = normalSpeed;
     }
     void Update()
     {
@@ -77,30 +83,39 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isWalking", false);
         }
 
+        //Set rage to be active
         if (rageAction.IsPressed() && !inRage && canRage)
         {
             inRage = true;
             secondDash = true;
             anim.Play("GoatTransform");
             anim.SetBool("Rage", true);
-            speed = 5f;
+            speed = rageSpeed;
             PI.actions.Disable();
             Invoke("EnableActions", 1.5f);
-            
-
-
-
+            canRage = false;
+            SetHealth(100f); //restore health on rage
         }
-        if (rageAction.IsPressed() && inRage /*|| rageIsOver*/)
+        //End rage
+        if ((rageAction.IsPressed() && inRage) || rageIsOver)
         {
             anim.Play("PigHurt");
             anim.SetBool("Rage", false);
-            speed = 1.2f;
+            speed = normalSpeed;
             inRage = false;
             secondDash = false;
-            StartCoroutine("RageCooldown");
+            rageIsOver = false;
         }
-
+        //Rage Decrease Over Time
+        if (inRage)
+        {
+            rage -= rageDecrease * Time.deltaTime;
+            if (rage <= 0)
+            {
+                rageIsOver = true;
+                rage = 0;
+            }
+        }
         if (secondAction.IsPressed() && !inRage && canBlock) //block for pig
         {
             canBlock = false;
@@ -261,12 +276,12 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
-    IEnumerator RageCooldown()
+    /*IEnumerator RageCooldown()
     {
         canRage = false;
         yield return new WaitForSeconds(2f); // WILL BE MUCH LONGER
         canRage = true;
-    }
+    }*/
 
     IEnumerator BadBlockCooldown()
     {
@@ -277,7 +292,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Damage()
     {
-        health -= 10;
+        health -= 5f;
         if (!inRage)
         {
             anim.Play("PigHurt");
@@ -301,6 +316,29 @@ public class PlayerController : MonoBehaviour
     public float GetHealth()
     {
         return health;
+    }
+
+    public void SetHealth(float amount)
+    {
+        health = amount;
+    }
+
+    public float GetRage()
+    {
+        return rage;
+    }
+
+    public void IncreaseRage(float amount)
+    {
+        rage += amount;
+        if (rage > rageMax)
+        {
+            rage = rageMax;
+        }
+        if (rage >= rageMax)
+        {
+            canRage = true;
+        }
     }
 }
 
