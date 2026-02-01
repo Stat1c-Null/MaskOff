@@ -276,6 +276,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3100127283883517864, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 702414517}
+    - target: {fileID: 3170016351362501911, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 702414517}
+    - target: {fileID: 3352886482428160088, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 702414517}
     - target: {fileID: 4033982693605620742, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
       propertyPath: player
       value: 
@@ -444,6 +456,10 @@ PrefabInstance:
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 1238340335}
+    - target: {fileID: 4673608469015703344, guid: 1e5e38110f09c014a9d93cdb7de825fd, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1937582325}
     - target: {fileID: 7631469425186718462, guid: 1e5e38110f09c014a9d93cdb7de825fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 508.26898
@@ -562,6 +578,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffe46455bdf35745a7d16e3ee27983b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+--- !u!1 &1937582325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8493131665786449195, guid: 5437ff75d18ed06cdaaf7236a428f3ce, type: 3}
+  m_PrefabInstance: {fileID: 232257289}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2144697513
 PrefabInstance:
   m_ObjectHideFlags: 0
