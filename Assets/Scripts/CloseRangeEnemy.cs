@@ -36,6 +36,7 @@ public class CloseRangeEnemy : Enemy
 
     void MeleeAttack()
     {
+        anim.Play("CloseAttack");
         if (canAttack && player.GetComponent<PlayerController>().canGetHit == true)
         {
             Debug.Log("Attacking the player with a melee attack!");
@@ -52,8 +53,18 @@ public class CloseRangeEnemy : Enemy
                 tf.localScale = new Vector3(1f, 1f, 1f);
                 currentDirection = Direction.Right;
             }
-            player.GetComponent<PlayerController>().Hit();
-            StartCoroutine(AttackCooldown());
+
+            if (player.GetComponent<PlayerController>().blocking )
+            {
+                player.GetComponent<PlayerController>().Block();
+                StartCoroutine(AttackCooldown());
+            }
+            else {
+                player.GetComponent<PlayerController>().Hit();
+                StartCoroutine(AttackCooldown());
+                TakeDamage(10);
+            }
+                
         }
     }
 

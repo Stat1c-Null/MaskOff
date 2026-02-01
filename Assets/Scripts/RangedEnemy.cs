@@ -39,7 +39,7 @@ public class RangedEnemy : Enemy
         }
         else if (currentState == State.Attacking && canTakeDamage == true)
         {
-            anim.Play("RangedAttack");
+            
             RangeAttack();
         }
 
@@ -50,6 +50,7 @@ public class RangedEnemy : Enemy
 
     void RangeAttack()
     {
+        
         left = -tf.right;
         float theta = Mathf.Atan2( left.x*dist.y - left.y*dist.x, left.x*dist.x + left.y*dist.y ); //angle between player direction and aim direction
         theta *= (180 / Mathf.PI); //degrees conversion
@@ -57,6 +58,7 @@ public class RangedEnemy : Enemy
 
         if(Mathf.Abs(theta) <= 10 && timer == 0)
         {
+            anim.Play("RangedAttack");
             Attack();
             timer = cooldown;
         }
