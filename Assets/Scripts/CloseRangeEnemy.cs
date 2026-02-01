@@ -41,12 +41,16 @@ public class CloseRangeEnemy : Enemy
             Debug.Log("Attacking the player with a melee attack!");
             canAttack = false;
             anim.SetBool("Attacking", true);
-            //Change attack directions
-            if (currentDirection == Direction.Left)
+            // Face the player based on the position
+            if (player.transform.position.x > tf.position.x)
             {
-                tf.localScale = new Vector3(1f, 1f, 1f);   
-            } else if (currentDirection == Direction.Right) {
                 tf.localScale = new Vector3(-1f, 1f, 1f);
+                currentDirection = Direction.Left;
+            }
+            else
+            {
+                tf.localScale = new Vector3(1f, 1f, 1f);
+                currentDirection = Direction.Right;
             }
             player.GetComponent<PlayerController>().Hit();
             StartCoroutine(AttackCooldown());
