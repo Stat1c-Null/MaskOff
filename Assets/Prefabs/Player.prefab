@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffe46455bdf35745a7d16e3ee27983b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  blocking: 0
   hitSound: {fileID: 8300000, guid: 417bb9b26c2d8a7479fda2cfcffbde3b, type: 3}
   block: {fileID: 8300000, guid: 37629ee1b77494c42aa6217fa1cfd13f, type: 3}
   pigDash: {fileID: 8300000, guid: dd46bdbd551e82e469206193640560ad, type: 3}
@@ -521,7 +522,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4052004572574731497}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 4c8c21023c3686d46abe48a97f8c916d, type: 2}
@@ -612,7 +613,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4560758207553220419}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 4c8c21023c3686d46abe48a97f8c916d, type: 2}
@@ -703,7 +704,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4751103246061212544}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 4c8c21023c3686d46abe48a97f8c916d, type: 2}
@@ -794,7 +795,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5263409562074670951}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 4c8c21023c3686d46abe48a97f8c916d, type: 2}
@@ -885,7 +886,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6102246734637799332}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 4c8c21023c3686d46abe48a97f8c916d, type: 2}
@@ -976,7 +977,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8027921326957305963}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 4c8c21023c3686d46abe48a97f8c916d, type: 2}

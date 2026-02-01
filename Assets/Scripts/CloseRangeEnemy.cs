@@ -49,13 +49,13 @@ public class CloseRangeEnemy : Enemy
             // Face the player based on the position
             if (player.transform.position.x > tf.position.x)
             {
-                tf.localScale = new Vector3(-1f, 1f, 1f);
-                currentDirection = Direction.Left;
+                tf.localScale = new Vector3(1f, 1f, 1f);
+                currentDirection = Direction.Right;
             }
             else
             {
-                tf.localScale = new Vector3(1f, 1f, 1f);
-                currentDirection = Direction.Right;
+                tf.localScale = new Vector3(-1f, 1f, 1f);
+                currentDirection = Direction.Left;
             }
 
             if (player.GetComponent<PlayerController>().blocking )
@@ -92,13 +92,13 @@ public class CloseRangeEnemy : Enemy
             // Flip sprite based on movement direction
             if (direction.x < 0)
             {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
-                currentDirection = Direction.Left;
+                transform.localScale = new Vector3(1f, 1f, 1f);
+                currentDirection = Direction.Right;
             }
             else if (direction.x > 0)
             {
-                transform.localScale = new Vector3(1f, 1f, 1f);
-                currentDirection = Direction.Right;
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+                currentDirection = Direction.Left;
             }
         }
     }
