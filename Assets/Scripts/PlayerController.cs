@@ -68,6 +68,8 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+
+        
         anim.SetBool("RAttack", false); //set bool to false to allow attacks once animation is over
         rb.linearVelocity = moveInput * speed;
         if (rb.linearVelocity.x == 0 && rb.linearVelocity.y == 0)
@@ -218,6 +220,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        
         moveInput = context.ReadValue<Vector2>();
         if (moveInput.x < 0)
         {
