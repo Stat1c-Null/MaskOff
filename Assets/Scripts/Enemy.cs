@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
     protected Animator anim;
     [SerializeField] protected float damageCooldown = 0.8f;
     protected bool canTakeDamage = true;
+    [SerializeField] private float rageIncrease;
     public enum Direction
     {
         Left,
@@ -90,6 +91,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Die()
     {
         Debug.Log("Enemy died.");
+        player.GetComponent<PlayerController>().IncreaseRage(rageIncrease);
         Destroy(gameObject);
     }
 
