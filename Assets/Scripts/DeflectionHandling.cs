@@ -4,9 +4,11 @@ public class DeflectionHandling : MonoBehaviour
 {
     private PlayerController playerController;
     private float damageAmount;
+    GameObject Player;
 
     void Start()
     {
+        Player = GameObject.FindWithTag("Player");
         playerController = GetComponentInParent<PlayerController>();
     }
 
@@ -36,6 +38,10 @@ public class DeflectionHandling : MonoBehaviour
                 // Deflect projectile in opposite direction
                 projectileRb.linearVelocity = -projectileRb.linearVelocity * 2f;
                 //Debug.Log("Projectile deflected!");
+            }
+            else if (playerController.blocking){
+                Destroy(collision.gameObject);
+                playerController.Block();
             }
             else
             {
