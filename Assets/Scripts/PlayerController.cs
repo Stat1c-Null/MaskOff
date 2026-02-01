@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
     //TO WHOMEVER IS DEALING WITH DAMAGE, you can put the player into the fall animation by using anim.SetBool("isHurt",true);
 
     [SerializeField] protected float health = 100f;
+    [SerializeField] protected float rage = 0f;
+    private float rageMax = 100f;
     public bool canGetHit = true;
     private float damageCD = 2f;
 
@@ -277,7 +279,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Damage()
     {
-        health -= 10;
+        health -= 5f;
         if (!inRage)
         {
             anim.Play("PigHurt");
@@ -301,6 +303,20 @@ public class PlayerController : MonoBehaviour
     public float GetHealth()
     {
         return health;
+    }
+
+    public float GetRage()
+    {
+        return rage;
+    }
+
+    public void IncreaseRage(float amount)
+    {
+        rage += amount;
+        if (rage > rageMax)
+        {
+            rage = rageMax;
+        }
     }
 }
 

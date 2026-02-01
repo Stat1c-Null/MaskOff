@@ -16,7 +16,7 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.GetHealth() <= 80 && player.GetHealth() >= 61)
+        /*if(player.GetHealth() <= 80 && player.GetHealth() >= 61)
         {
             anim.SetInteger("HealthStatus", 1);
         }
@@ -38,8 +38,9 @@ public class HealthBar : MonoBehaviour
             
             StartCoroutine("DeathSequence");
             anim.SetInteger("HealthStatus", 5);
-        }
-        
+        }*/
+        anim.SetInteger("HealthStatus", 5 - Mathf.CeilToInt(player.GetHealth() / 20f));
+        Debug.Log(Mathf.CeilToInt(player.GetHealth() / 20f));
      }
 
 }
