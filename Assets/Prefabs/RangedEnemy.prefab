@@ -113,8 +113,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1335408309
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5704938559048430634, guid: 47e9e8cd402cffa4790683b9a049daad, type: 3}
@@ -144,15 +144,16 @@ MonoBehaviour:
   health: 100
   wanderMoveSpeed: 0.7
   attackMoveSpeed: 1.5
-  aggroRange: 5
+  aggroRange: 15
   attackDistance: 1.5
   wanderWait: 2
   player: {fileID: 0}
+  damageCooldown: 0.8
   turnSpeed: 50
   left: {x: 0, y: 0, z: 0}
   spawn: {fileID: 8774638551454536696}
   projectile: {fileID: 1251751203512279938, guid: f506bf0e4c85c7e46927edecd5f4fde2, type: 3}
-  projSpeed: 3
+  projSpeed: 6
   cooldown: 2
 --- !u!50 &8710569705164120452
 Rigidbody2D:
@@ -237,7 +238,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00000047683716, y: 0.044399977}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -247,5 +248,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1775999, y: 4.107987}
   m_EdgeRadius: 0

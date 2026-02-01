@@ -72,6 +72,16 @@ public class RangedEnemy : Enemy
         {
             tf.Rotate(0, 0, turnThisMuch);
         }
+
+        // Flip sprite when aiming to the right
+        if (dist.x > 0)
+        {
+            tf.localScale = new Vector3(1f, -1f, 1f);
+        }
+        else
+        {
+            tf.localScale = new Vector3(1f, 1f, 1f);
+        }
     }
 
     void Attack()
