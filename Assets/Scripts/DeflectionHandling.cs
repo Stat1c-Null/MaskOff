@@ -3,10 +3,19 @@ using UnityEngine;
 public class DeflectionHandling : MonoBehaviour
 {
     private PlayerController playerController;
+    private float damageAmount;
 
     void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
+    }
+
+    void Update()
+    {
+        if (playerController != null)
+        {
+            damageAmount = playerController.inRage ? playerController.rageDamageAmount : playerController.normalDamageAmount;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -14,7 +23,7 @@ public class DeflectionHandling : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && playerController != null && (playerController.isAttackActive || playerController.isRageAttackActive))
         {
             //Debug.Log("Attack hit enemy!");
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(20f);
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damageAmount);
         }
 
         if(collision.gameObject.CompareTag("Projectile")) 

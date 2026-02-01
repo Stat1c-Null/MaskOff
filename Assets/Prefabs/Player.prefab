@@ -254,10 +254,15 @@ MonoBehaviour:
   facingRight: 1
   isAttackActive: 0
   isRageAttackActive: 0
+  inRage: 0
   health: 100
   rage: 0
   rageDecrease: 5
   canGetHit: 1
+  normalDamageAmount: 20
+  rageDamageAmount: 30
+  receiveNormalStateDamage: 10
+  receiveRageStateDamage: 5
 --- !u!50 &3725459173260333075
 Rigidbody2D:
   serializedVersion: 5

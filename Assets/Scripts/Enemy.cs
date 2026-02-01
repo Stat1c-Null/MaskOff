@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
     protected Transform tf;
     protected float distanceToPlayer;
     protected Animator anim;
+    protected SpriteRenderer spriteRenderer;
     [SerializeField] protected float damageCooldown = 0.8f;
     protected bool canTakeDamage = true;
     [SerializeField] private float rageIncrease;
@@ -46,6 +47,7 @@ public class Enemy : MonoBehaviour
         tf = GetComponent<Transform>();
         currentState = State.Wandering;
         player = GameObject.FindWithTag("Player");
+        spriteRenderer = GetComponent<SpriteRenderer>();
         if (player == null)
         {
             Debug.LogError("Player object not found in the scene. Please ensure there is a GameObject with the tag 'Player'.");
@@ -81,6 +83,7 @@ public class Enemy : MonoBehaviour
             return;
         health -= damage;
         canTakeDamage = false;
+
         StartCoroutine(DamageCooldown());
         if (health <= 0)
         {
@@ -97,7 +100,17 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator DamageCooldown()
     {
+        //Flash effect
+        // Set alpha low
+        Color color = spriteRenderer.color;
+        color.a = 0.5f;
+        spriteRenderer.color = color;
+
         yield return new WaitForSeconds(damageCooldown);
         canTakeDamage = true;
+        
+        // Restore alpha
+        color.a = 1f;
+        spriteRenderer.color = color;
     }
 }

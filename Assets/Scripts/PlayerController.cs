@@ -39,16 +39,22 @@ public class PlayerController : MonoBehaviour
     public bool isAttackActive = false;
     public bool isRageAttackActive = false;
 
-    bool inRage = false;
+    public bool inRage = false;
     //TO WHOMEVER IS DEALING WITH DAMAGE, you can put the player into the fall animation by using anim.SetBool("isHurt",true);
 
     [SerializeField] protected float health = 100f;
     [SerializeField] protected float rage;
     private float rageMax = 100f;
-    [SerializeField] private float rageDecrease = 5f;
+    [SerializeField] private float rageDecrease = 5f; //By how much rage decreases when in rage mode
     public bool canGetHit = true;
     private float damageCD = 2f;
     private bool rageIsOver = false;
+    //How much damage the player does in different states
+    public float normalDamageAmount;
+    public float rageDamageAmount;
+    //How much damage the player receives in different states
+    [SerializeField] private float receiveNormalStateDamage;
+    [SerializeField] private float receiveRageStateDamage;
 
     void Start()
     {
@@ -295,7 +301,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Damage()
     {
-        health -= 5f;
+        float damage = inRage ? receiveRageStateDamage : receiveNormalStateDamage;
+        health -= damage;
         if (!inRage)
         {
             anim.Play("PigHurt");
