@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
+        pause = InputSystem.actions.FindAction("Pause");
         Time.timeScale = 1f;
         if (SceneManager.GetActiveScene().name == "MainMenu")
             return;
@@ -37,9 +38,11 @@ public class GameController : MonoBehaviour
         }
     }
 
+
+   
     void Start()
     {
-        pause = InputSystem.actions.FindAction("Pause");
+        
     }
 
     public void startGame()
@@ -89,11 +92,11 @@ public class GameController : MonoBehaviour
             Invoke("GameOver", 1.0f);
         }
 
-        if(pause.WasPressedThisFrame() && isPaused == false)
+        if (pause.WasPressedThisFrame() && isPaused == false)
         {
             Pause();
         }
-        else if (pause.WasPressedThisFrame() && isPaused == true)
+        else if (pause.IsPressed() && isPaused == true)
         {
             UnPause();
         }

@@ -4,6 +4,25 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+
+    
+    public AudioClip hitSound;
+    public AudioClip block;
+    public AudioClip pigDash; 
+    public AudioClip goatSound;
+    public AudioClip goatHit;
+    public AudioClip goatDash;
+    public AudioClip goatWalk;
+    public AudioClip pigWalk;
+    public AudioClip hurt;
+    public AudioClip death;
+    public AudioClip woosh;
+    public AudioClip transform;
+    private AudioSource audioSource;
+
+    
+
+    
     public GameObject PigAttack;
     public GameObject PigDash;
     public GameObject PigBlock;
@@ -28,6 +47,7 @@ public class PlayerController : MonoBehaviour
     InputAction rageAction;
     InputAction dashAction;
     InputAction move;
+    
     public bool facingRight = true;
     PlayerInput PI;
     bool canDash = true;
@@ -59,6 +79,10 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = pigWalk;
+        
+
         //getting components, you know how it be.
         PI = GetComponent<PlayerInput>();
 
@@ -79,6 +103,8 @@ public class PlayerController : MonoBehaviour
         move = InputSystem.actions.FindAction("Move");
         dashAction = InputSystem.actions.FindAction("Sprint");
         speed = normalSpeed;
+
+
     }
     void Update()
     {
@@ -90,16 +116,33 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        if (InputSystem.actions.FindAction("RageDebug").IsPressed())
+        {
+            rage = 100f;
+            canRage = true;
+        }
+       
         anim.SetBool("RAttack", false); //set bool to false to allow attacks once animation is over
         rb.linearVelocity = moveInput * speed;
         if (rb.linearVelocity.x == 0 && rb.linearVelocity.y == 0)
         {
+            audioSource.loop = false;
+            //if (audioSource.clip.name == pigWalk.name || audioSource.clip.name == goatWalk.name)
+            //{
+            //    audioSource.Pause;
+            //}
+
             anim.SetBool("isWalking", false);
         }
+
+
 
         //Set rage to be active
         if (rageAction.IsPressed() && !inRage && canRage)
         {
+            
+            audioSource.PlayOneShot(transform);
+            
             inRage = true;
             secondDash = true;
             anim.Play("GoatTransform");
@@ -109,10 +152,13 @@ public class PlayerController : MonoBehaviour
             Invoke("EnableActions", 1.5f);
             canRage = false;
             SetHealth(100f); //restore health on rage
+            audioSource.clip = goatSound;
+            audioSource.Play();
         }
         //End rage
         if ((rageAction.IsPressed() && inRage) || rageIsOver)
         {
+            
             anim.Play("PigHurt");
             anim.SetBool("Rage", false);
             speed = normalSpeed;
@@ -132,12 +178,14 @@ public class PlayerController : MonoBehaviour
         }
         if (secondAction.IsPressed() && !inRage && canBlock) //block for pig
         {
+            audioSource.PlayOneShot(block);
             canBlock = false;
             successfulBlock = false;
-
+            
             anim.Play("PigBlock");
             while (anim.GetCurrentAnimatorStateInfo(0).IsName("PigBlock"))
             {
+                
                 if (successfulBlock)
                 {
                     //CODE HERE WILL VALIDATE HIT AND IF TRUE
@@ -170,23 +218,45 @@ public class PlayerController : MonoBehaviour
 
         if (attackAction.IsPressed() && !inRage)
         {
+            if (audioSource.clip.name != "Bat Hit" && audioSource.clip.name != "Goat Hit")
+            {
+                audioSource.PlayOneShot(hitSound);
+            }
+
+
+                
+            
+            
             anim.Play("PigSwingRight");
         }
 
         if (attackAction.IsPressed() && inRage)
         {
+            if (audioSource.clip.name != "Bat Hit" && audioSource.clip.name != "Goat Hit")
+            {
+                audioSource.PlayOneShot(goatHit);
+            }
+
+
+            
+            
+            
             anim.Play("GoatSwing");
 
         }
 
-        if (dashAction.IsPressed() && canDash && !inRage)
+        if (dashAction.IsPressed() && canDash && !inRage && !(rb.linearVelocity.x == 0 && rb.linearVelocity.y == 0))
         {
+            
+            audioSource.PlayOneShot(pigDash);
             anim.Play("PigDash");
             rb.MovePosition(rb.position + moveInput * 3.5f);
             StartCoroutine(DashCooldown());
         }
-        else if (dashAction.IsPressed() && canDash && inRage)
+        else if (dashAction.IsPressed() && canDash && inRage && !(rb.linearVelocity.x == 0 && rb.linearVelocity.y == 0))
         {
+            
+            audioSource.PlayOneShot(pigDash);
             anim.Play("GoatDash");
             rb.MovePosition(rb.position + moveInput * 3.5f);
             if (secondDash)
@@ -198,17 +268,28 @@ public class PlayerController : MonoBehaviour
         }
 
         //Series of if statements that toggle on and off hit boxes for their respective moves depending on if the animation is playing
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("PigSwingRight"))
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("PigSwingRight")) 
         {
+            
             PAHB.enabled = true;
             isAttackActive = true;
         }
+        else if(anim.GetCurrentAnimatorStateInfo(0).IsName("GoatSwing"))
+        {
+            
+            GAHB.enabled = true;
+            isRageAttackActive = true;
+
+        }
         else
         {
+            
             PAHB.enabled = false;
             isAttackActive = false;
+            GAHB.enabled = false;
+            isRageAttackActive = false;
         }
-
+        
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("PigDash"))
         {
             PDHB.enabled = true;
@@ -219,17 +300,7 @@ public class PlayerController : MonoBehaviour
             PDHB.enabled = false;
         }
 
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("GoatSwing"))
-        {
-            GAHB.enabled = true;
-            isRageAttackActive = true;
-
-        }
-        else
-        {
-            GAHB.enabled = false;
-            isRageAttackActive = false;
-        }
+        
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("GoatDash"))
         {
             GAHB.enabled = true;
@@ -257,6 +328,18 @@ public class PlayerController : MonoBehaviour
             return;
 
         moveInput = context.ReadValue<Vector2>();
+        audioSource.loop = true;
+        if (!inRage)
+        {
+            audioSource.clip = pigWalk;
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.clip = goatWalk;
+            audioSource.Play();
+        }
+            moveInput = context.ReadValue<Vector2>();
         if (moveInput.x < 0)
         {
             facingRight = false;
@@ -267,6 +350,7 @@ public class PlayerController : MonoBehaviour
             facingRight = true;
             tf.transform.localScale = new Vector3(1f, 1f, 1f);
         }
+        
         anim.SetBool("isWalking", true);
     }
 
@@ -362,6 +446,9 @@ public class PlayerController : MonoBehaviour
             }
         }   
     }
+
+    
+    
 }
 
 
